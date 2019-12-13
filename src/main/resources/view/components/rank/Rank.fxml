@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDialog?>
+<?import com.jfoenix.controls.JFXDialogLayout?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableColumn?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane fx:id="rootRank" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane>
+          <top>
+              <JFXDialog fx:id="dialogRank">
+                  <JFXDialogLayout>
+                      <heading>
+                          <Label>Aide</Label>
+                      </heading>
+                      <body>
+                          <Label>Cette page affiche les classements des équipes en fonction de la league.</Label>
+                      </body>
+                      <actions>
+                          <JFXButton fx:id="buttonAcceptDialogRank" styleClass="dialog-accept">Compris
+                          </JFXButton>
+                      </actions>
+                  </JFXDialogLayout>
+              </JFXDialog>
+              <fx:include source="../bar/TitleSectionBar.fxml" BorderPane.alignment="CENTER_LEFT" />
+          </top>
+         <center>
+             <JFXTabPane>
+                <tabs>
+                    <Tab fx:id="tabPaneLidlStarligue" text="Lidl Starligue">
+                        <content>
+                            <StackPane>
+                                <children>
+                                    <VBox spacing="20.0">
+                                        <children>
+                                            <HBox alignment="CENTER_LEFT" spacing="20.0">
+                                                <children>
+                                                    <Label styleClass="title-label" text="Année" />
+                                                    <JFXComboBox fx:id="comboBoxLidlStarligue" minWidth="200.0" />
+                                                    <Separator orientation="VERTICAL">
+                                                        <padding>
+                                                            <Insets left="20.0" right="20.0" />
+                                                        </padding>
+                                                    </Separator>
+                                                    <Label fx:id="treeTableViewCountTeamLidlStarligue" minWidth="60.0" styleClass="title-label" />
+                                                    <Label styleClass="title-label" />
+                                                    <StackPane>
+                                                        <children>
+                                                            <StackPane maxWidth="200" StackPane.alignment="CENTER_RIGHT">
+                                                                <children>
+                                                                    <JFXTextField fx:id="searchFieldLidlStarligue" labelFloat="true" promptText="Rechercher une équipe..." />
+                                                                </children>
+                                                            </StackPane>
+                                                        </children>
+                                                    </StackPane>
+                                                </children>
+                                            </HBox>
+                                            <Separator />
+                                            <JFXTreeTableView fx:id="treeTableViewLidlStarligue">
+                                                <columns>
+                                                    <JFXTreeTableColumn fx:id="column1LidlStarligue" prefWidth="200.0" resizable="true" text="Classement" />
+                                                    <JFXTreeTableColumn fx:id="column2LidlStarligue" prefWidth="200.0" resizable="true" text="Équipes" />
+<!--                                                    <JFXTreeTableColumn fx:id="column3LidlStarligue" minWidth="100.0" resizable="true" text="5 derniers match" />-->
+                                                    <JFXTreeTableColumn fx:id="column4LidlStarligue" minWidth="20.0" resizable="true" text="Joué" />
+                                                    <JFXTreeTableColumn fx:id="column5LidlStarligue" minWidth="20.0" resizable="true" text="Gagné" />
+                                                    <JFXTreeTableColumn fx:id="column6LidlStarligue" minWidth="20.0" resizable="true" text="Nul" />
+                                                    <JFXTreeTableColumn fx:id="column7LidlStarligue" minWidth="20.0" resizable="true" text="Perdu" />
+                                                    <JFXTreeTableColumn fx:id="column8LidlStarligue" minWidth="20.0" resizable="true" text="BP" />
+                                                    <JFXTreeTableColumn fx:id="column9LidlStarligue" minWidth="20.0" resizable="true" text="BC" />
+                                                    <JFXTreeTableColumn fx:id="column10LidlStarligue" minWidth="20.0" resizable="true" text="+/-" />
+                                                    <JFXTreeTableColumn fx:id="column11LidlStarligue" minWidth="100.0" resizable="true" text="Points" />
+                                                </columns>
+                                            </JFXTreeTableView>
+                                        </children>
+                                    </VBox>
+                                </children>
+                            </StackPane>
+                        </content>
+                    </Tab>
+                    <Tab fx:id="tabPaneProligue" text="Proligue">
+                        <content>
+                            <StackPane>
+                                <children>
+                                    <VBox spacing="20.0">
+                                        <children>
+                                            <HBox alignment="CENTER_LEFT" spacing="20.0">
+                                                <children>
+                                                    <Label styleClass="title-label" text="Année" />
+                                                    <JFXComboBox fx:id="comboBoxProligue" minWidth="200.0" />
+                                                    <Separator orientation="VERTICAL">
+                                                        <padding>
+                                                            <Insets left="20.0" right="20.0" />
+                                                        </padding>
+                                                    </Separator>
+                                                    <Label fx:id="treeTableViewCountTeamProligue" minWidth="60.0" styleClass="title-label" />
+                                                    <Label styleClass="title-label" />
+                                                    <StackPane>
+                                                        <children>
+                                                            <StackPane maxWidth="200" StackPane.alignment="CENTER_RIGHT">
+                                                                <children>
+                                                                    <JFXTextField fx:id="searchFieldProligue" labelFloat="true" promptText="Rechercher une équipe..." />
+                                                                </children>
+                                                            </StackPane>
+                                                        </children>
+                                                    </StackPane>
+                                                </children>
+                                            </HBox>
+                                            <Separator />
+                                            <JFXTreeTableView fx:id="treeTableViewProligue">
+                                                <columns>
+                                                    <JFXTreeTableColumn fx:id="column1Proligue" prefWidth="200.0" resizable="true" text="Classement" />
+                                                    <JFXTreeTableColumn fx:id="column2Proligue" prefWidth="200.0" resizable="true" text="Équipes" />
+<!--                                                    <JFXTreeTableColumn fx:id="column3Proligue" minWidth="100.0" resizable="true" text="5 derniers match" />-->
+                                                    <JFXTreeTableColumn fx:id="column4Proligue" minWidth="20.0" resizable="true" text="Joué" />
+                                                    <JFXTreeTableColumn fx:id="column5Proligue" minWidth="20.0" resizable="true" text="Gagné" />
+                                                    <JFXTreeTableColumn fx:id="column6Proligue" minWidth="20.0" resizable="true" text="Nul" />
+                                                    <JFXTreeTableColumn fx:id="column7Proligue" minWidth="20.0" resizable="true" text="Perdu" />
+                                                    <JFXTreeTableColumn fx:id="column8Proligue" minWidth="20.0" resizable="true" text="BP" />
+                                                    <JFXTreeTableColumn fx:id="column9Proligue" minWidth="20.0" resizable="true" text="BC" />
+                                                    <JFXTreeTableColumn fx:id="column10Proligue" minWidth="20.0" resizable="true" text="+/-" />
+                                                    <JFXTreeTableColumn fx:id="column11Proligue" minWidth="100.0" resizable="true" text="Points" />
+                                                </columns>
+                                            </JFXTreeTableView>
+                                        </children>
+                                    </VBox>
+                                </children>
+                            </StackPane>
+                        </content>
+                    </Tab>
+                </tabs>
+             </JFXTabPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

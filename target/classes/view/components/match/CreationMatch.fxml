@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.collections.FXCollections?>
+<?import com.jfoenix.validation.RequiredFieldValidator?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import com.jfoenix.controls.JFXTreeTableColumn?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+
+<StackPane fx:id="newMatch" xmlns="http://javafx.com/javafx/2.2" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <BorderPane BorderPane.alignment="CENTER">
+            <center>
+                <StackPane BorderPane.alignment="CENTER">
+                    <children>
+                        <VBox>
+                            <children>
+                                <VBox>
+                                    <children>
+                                        <Label text="Selectionner une league" />
+                                        <HBox alignment="CENTER">
+                                            <children>
+                                                <JFXRadioButton fx:id="radioButtonStarligue1" text="Lidle Starligue" />
+                                                <JFXRadioButton fx:id="radioButtonProligue1" text="Proligue" />
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                                <Separator prefWidth="200.0" />
+                                <VBox>
+                                    <children>
+                                        <Label styleClass="title-label" text="Sélectionner la date du match" />
+                                        <HBox alignment="CENTER" spacing="40" style="-fx-padding: 0 0 0 50;">
+                                            <children>
+                                                <JFXDatePicker />
+                                            </children>
+                                        </HBox>
+                                        <Label styleClass="title-label" text="Sélectionner l'heure du début du match" />
+                                        <HBox alignment="CENTER" spacing="40" style="-fx-padding: 0 0 0 50;">
+                                            <children>
+                                                <JFXTimePicker />
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                                <Separator prefWidth="200.0" />
+                                <VBox>
+                                    <children>
+                                        <Label styleClass="title-label" text="Sélectionner les équipes du match" />
+                                        <HBox alignment="CENTER" spacing="100">
+                                            <children>
+                                                <VBox>
+                                                    <children>
+                                                        <Label text="Équipe 1" />
+                                                        <JFXComboBox id="jfxEditableComboBox" editable="true" prefWidth="200.0" promptText="Selectionner/Éditer une équipe">
+                                                            <items>
+                                                                <FXCollections fx:factory="observableArrayList">
+                                                                    <Label>
+                                                                        <graphic>
+                                                                            <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                                                                <children>
+                                                                                    <FontIcon iconLiteral="fas-star" iconSize="18" styleClass="custom-jfx-list-view-icon" />
+                                                                                </children>
+                                                                            </StackPane>
+                                                                        </graphic>
+                                                                    </Label>
+                                                                    <Label>
+                                                                        <graphic>
+                                                                            <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                                                                <children>
+                                                                                    <FontIcon iconLiteral="fas-heart" iconSize="18" styleClass="custom-jfx-list-view-icon" />
+                                                                                </children>
+                                                                            </StackPane>
+                                                                        </graphic>
+                                                                    </Label>
+                                                                    <Label>
+                                                                        <graphic>
+                                                                            <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                                                                <children>
+                                                                                    <FontIcon iconLiteral="fas-exclamation-triangle" iconSize="18" styleClass="custom-jfx-list-view-icon" />
+                                                                                </children>
+                                                                            </StackPane>
+                                                                        </graphic>
+                                                                    </Label>
+                                                                    <Label>
+                                                                        <graphic>
+                                                                            <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                                                                <children>
+                                                                                    <FontIcon iconLiteral="fas-university" iconSize="18" styleClass="custom-jfx-list-view-icon" />
+                                                                                </children>
+                                                                            </StackPane>
+                                                                        </graphic>
+                                                                    </Label>
+                                                                    <Label>
+                                                                        <graphic>
+                                                                            <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                                                                <children>
+                                                                                    <FontIcon iconLiteral="fas-tablet-alt" iconSize="18" styleClass="custom-jfx-list-view-icon" />
+                                                                                </children>
+                                                                            </StackPane>
+                                                                        </graphic>
+                                                                    </Label>
+                                                                </FXCollections>
+                                                            </items>
+                                                            <validators>
+                                                                <RequiredFieldValidator message="Input Required!">
+                                                                    <icon>
+                                                                        <FontIcon iconLiteral="fas-exclamation-triangle" styleClass="error-icon" />
+                                                                    </icon>
+                                                                </RequiredFieldValidator>
+                                                            </validators>
+                                                        </JFXComboBox>
+                                                    </children>
+                                                </VBox>
+                                                <VBox>
+                                                    <children>
+                                                        <Label text="Équipe 2" />
+                                                        <JFXComboBox id="jfxEditableComboBox" editable="true" prefWidth="200.0" promptText="Selectionner/Éditer une équipe">
+                                                            <items>
+                                                                <FXCollections fx:factory="observableArrayList">
+                                                                    <Label>
+                                                                        <graphic>
+                                                                            <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                                                                <children>
+                                                                                    <FontIcon iconLiteral="fas-star" iconSize="18" styleClass="custom-jfx-list-view-icon" />
+                                                                                </children>
+                                                                            </StackPane>
+                                                                        </graphic>
+                                                                    </Label>
+                                                                    <Label>
+                                                                        <graphic>
+                                                                            <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                                                                <children>
+                                                                                    <FontIcon iconLiteral="fas-heart" iconSize="18" styleClass="custom-jfx-list-view-icon" />
+                                                                                </children>
+                                                                            </StackPane>
+                                                                        </graphic>
+                                                                    </Label>
+                                                                    <Label>
+                                                                        <graphic>
+                                                                            <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                                                                <children>
+                                                                                    <FontIcon iconLiteral="fas-exclamation-triangle" iconSize="18" styleClass="custom-jfx-list-view-icon" />
+                                                                                </children>
+                                                                            </StackPane>
+                                                                        </graphic>
+                                                                    </Label>
+                                                                    <Label>
+                                                                        <graphic>
+                                                                            <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                                                                <children>
+                                                                                    <FontIcon iconLiteral="fas-university" iconSize="18" styleClass="custom-jfx-list-view-icon" />
+                                                                                </children>
+                                                                            </StackPane>
+                                                                        </graphic>
+                                                                    </Label>
+                                                                    <Label>
+                                                                        <graphic>
+                                                                            <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                                                                <children>
+                                                                                    <FontIcon iconLiteral="fas-tablet-alt" iconSize="18" styleClass="custom-jfx-list-view-icon" />
+                                                                                </children>
+                                                                            </StackPane>
+                                                                        </graphic>
+                                                                    </Label>
+                                                                </FXCollections>
+                                                            </items>
+                                                            <validators>
+                                                                <RequiredFieldValidator message="Input Required!">
+                                                                    <icon>
+                                                                        <FontIcon iconLiteral="fas-exclamation-triangle" styleClass="error-icon" />
+                                                                    </icon>
+                                                                </RequiredFieldValidator>
+                                                            </validators>
+                                                        </JFXComboBox>
+                                                    </children>
+                                                </VBox>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                                <Separator prefWidth="200.0" />
+                                <VBox>
+                                    <children>
+                                        <Label styleClass="title-label" text="Sélectionner les joueurs du match" />
+                                        <HBox>
+                                            <children>
+                                                <VBox>
+                                                    <children>
+                                                        <HBox alignment="CENTER">
+                                                            <children>
+                                                                <Label styleClass="title-label" text="Équipe 1" />
+                                                                <Label fx:id="treeTableViewCount" minWidth="80" styleClass="title-label" />
+                                                                <JFXButton fx:id="treeTableViewAdd" buttonType="FLAT" text="+" />
+                                                                <JFXButton fx:id="treeTableViewRemove" buttonType="FLAT" text="-" />
+                                                                <StackPane HBox.hgrow="ALWAYS">
+                                                                    <children>
+                                                                        <StackPane maxWidth="200" StackPane.alignment="CENTER_RIGHT">
+                                                                            <children>
+                                                                                <JFXTextField fx:id="searchField" promptText="Rechercher..." />
+                                                                            </children>
+                                                                        </StackPane>
+                                                                    </children>
+                                                                </StackPane>
+                                                            </children>
+                                                        </HBox>
+                                                        <JFXTreeTableView fx:id="treeTableView">
+                                                            <columns>
+                                                                <JFXTreeTableColumn fx:id="firstNameColumn" maxWidth="-1.0" minWidth="100.0" prefWidth="-1.0" resizable="false" text="First Name" />
+                                                                <JFXTreeTableColumn fx:id="lastNameColumn" maxWidth="-1.0" minWidth="100.0" prefWidth="-1.0" resizable="false" text="Last Name" />
+                                                                <JFXTreeTableColumn fx:id="ageColumn" maxWidth="-1.0" minWidth="100.0" prefWidth="-1.0" resizable="false" text="Age" />
+                                                            </columns>
+                                                        </JFXTreeTableView>
+                                                    </children>
+                                                </VBox>
+                                                <VBox>
+                                                    <children>
+                                                        <HBox alignment="CENTER">
+                                                            <children>
+                                                                <Label styleClass="title-label" text="Équipe 2" />
+                                                                <Label fx:id="treeTableViewCount1" minWidth="80" styleClass="title-label" />
+                                                                <JFXButton fx:id="treeTableViewAdd1" buttonType="FLAT" text="+" />
+                                                                <JFXButton fx:id="treeTableViewRemove1" buttonType="FLAT" text="-" />
+                                                                <StackPane HBox.hgrow="ALWAYS">
+                                                                    <children>
+                                                                        <StackPane maxWidth="200" StackPane.alignment="CENTER_RIGHT">
+                                                                            <children>
+                                                                                <JFXTextField fx:id="searchField1" promptText="Rechercher..." />
+                                                                            </children>
+                                                                        </StackPane>
+                                                                    </children>
+                                                                </StackPane>
+                                                            </children>
+                                                        </HBox>
+                                                        <JFXTreeTableView fx:id="treeTableView1" prefWidth="308.0">
+                                                            <columns>
+                                                                <JFXTreeTableColumn fx:id="firstNameColumn1" maxWidth="-1.0" minWidth="100.0" prefWidth="-1.0" resizable="false" text="First Name" />
+                                                                <JFXTreeTableColumn fx:id="lastNameColumn1" maxWidth="-1.0" minWidth="100.0" prefWidth="-1.0" resizable="false" text="Last Name" />
+                                                                <JFXTreeTableColumn fx:id="ageColumn1" maxWidth="-1.0" minWidth="100.0" prefWidth="-1.0" resizable="false" text="Age" />
+                                                            </columns>
+                                                        </JFXTreeTableView>
+                                                    </children>
+                                                </VBox>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                                <Separator prefWidth="200.0" />
+                            </children>
+                        </VBox>
+                    </children>
+                </StackPane>
+            </center>
+        </BorderPane>
+    </children>
+</StackPane>

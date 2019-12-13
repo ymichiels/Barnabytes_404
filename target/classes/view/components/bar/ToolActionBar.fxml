@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane fx:id="toolActionBar" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.components.bar.ToolActionBarController">
+   <children>
+      <HBox alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" spacing="40.0">
+         <children>
+            <JFXButton fx:id="buttonBack" mnemonicParsing="false" styleClass="btn-danger" text="Précédent">
+               <HBox.margin>
+                  <Insets bottom="40.0" />
+               </HBox.margin></JFXButton>
+            <JFXButton fx:id="buttonNext" mnemonicParsing="false" styleClass="btn-secondary" text="Suivant">
+               <HBox.margin>
+                  <Insets bottom="40.0" />
+               </HBox.margin></JFXButton>
+            <JFXButton fx:id="buttonFinish" mnemonicParsing="false" styleClass="btn-success" text="Terminer">
+               <HBox.margin>
+                  <Insets bottom="40.0" />
+               </HBox.margin></JFXButton>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </HBox>
+   </children>
+</StackPane>

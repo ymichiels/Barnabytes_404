@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.StackPane?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<StackPane fx:id="rootPopup" xmlns="http://javafx.com/javafx/2.2" xmlns:fx="http://javafx.com/fxml/1">
+    <JFXListView fx:id="toolbarPopupList" styleClass="option-list-view" onMouseClicked="#submit">
+        <Label>
+            Mon compte
+            <graphic>
+                <StackPane styleClass="custom-jfx-list-view-icon-container">
+                    <FontIcon iconLiteral="mdi-account" iconSize="18" styleClass="option-jfx-list-view-icon"/>
+                </StackPane>
+            </graphic>
+        </Label>
+        <Label>
+            Paramètres
+            <graphic>
+                <StackPane styleClass="custom-jfx-list-view-icon-container">
+                    <FontIcon iconLiteral="mdi-settings" iconSize="18" styleClass="option-jfx-list-view-icon"/>
+                </StackPane>
+            </graphic>
+        </Label>
+        <Label>
+            Se Déconnecter
+            <graphic>
+                <StackPane styleClass="custom-jfx-list-view-icon-container">
+                    <FontIcon iconLiteral="mdi-logout" iconSize="18" styleClass="option-jfx-list-view-icon"/>
+                </StackPane>
+            </graphic>
+        </Label>
+    </JFXListView>
+</StackPane>

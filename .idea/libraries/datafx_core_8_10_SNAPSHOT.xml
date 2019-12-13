@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="datafx-core-8.10-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/datafx-core-8.10-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Separator?>
+<?import com.jfoenix.controls.JFXScrollPane?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import com.jfoenix.controls.JFXDialogLayout?>
+<?import com.jfoenix.controls.JFXDialog?>
+
+<StackPane fx:id="rootResumeMatch" xmlns="http://javafx.com/javafx/2.2" xmlns:fx="http://javafx.com/fxml/1">
+<!--            fx:controller="sample.controller.components.match.ResumeMatchsController"-->
+   <children>
+      <BorderPane>
+         <top>
+            <JFXDialog fx:id="dialogResumeMatch">
+               <JFXDialogLayout>
+                  <heading>
+                     <Label>Choix possible</Label>
+                  </heading>
+                  <body>
+                     <Label>Vous pouvez dans un premier temps créer un match en cliquant sur le bouton "Créer un match".
+                        Vous pouvez également lancer un match en cliquant sur le bouton "Lancer un match".
+                     </Label>
+                  </body>
+                  <actions>
+                     <JFXButton fx:id="buttonAcceptDialogResumeMatch" styleClass="dialog-accept">Compris
+                     </JFXButton>
+                  </actions>
+               </JFXDialogLayout>
+            </JFXDialog>
+           <fx:include source="../bar/TitleSectionBar.fxml" BorderPane.alignment="CENTER_LEFT" />
+         </top>
+         <center>
+            <StackPane BorderPane.alignment="CENTER">
+              <children>
+                 <BorderPane>
+                    <top>
+                       <HBox spacing="40">
+                          <children>
+                             <JFXButton fx:id="buttonRefresh" onAction="#refresh" text="Rafraichir">
+                                <graphic>
+                                   <StackPane>
+                                      <FontIcon iconLiteral="mdi-refresh" iconSize="24" styleClass="option-jfx-list-view-icon"/>
+                                   </StackPane>
+                                </graphic>
+                             </JFXButton>
+                             <JFXButton fx:id="buttonGraph" onAction="#graph" text="Graph">
+                                <graphic>
+                                   <StackPane>
+                                      <FontIcon iconLiteral="mdi-chart-bar" iconSize="24" styleClass="option-jfx-list-view-icon"/>
+                                   </StackPane>
+                                </graphic>
+                             </JFXButton>
+                             <JFXButton fx:id="buttonAddNewMatch" onAction="#addNewMatch" text="Créer un match">
+                                <graphic>
+                                   <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                      <FontIcon iconLiteral="mdi-plus" iconSize="24" styleClass="option-jfx-list-view-icon"/>
+                                   </StackPane>
+                                </graphic>
+                             </JFXButton>
+                             <JFXButton fx:id="buttonStartNewMatch" onAction="#startNewMatch" text="Lancer un match">
+                                <graphic>
+                                   <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                      <FontIcon iconLiteral="mdi-plus" iconSize="24" styleClass="option-jfx-list-view-icon"/>
+                                   </StackPane>
+                                </graphic>
+                             </JFXButton>
+                          </children>
+                       </HBox>
+                    </top>
+                    <center>
+                       <JFXScrollPane fx:id="scrollPane" styleClass="custom-jfx-scroll-pane">
+                          <content>
+                             <StackPane fx:id="contentPane" style="-fx-padding:24;">
+                             </StackPane>
+                          </content>
+                       </JFXScrollPane>
+                    </center>
+                 </BorderPane>
+              </children>
+            </StackPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

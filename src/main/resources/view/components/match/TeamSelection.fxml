@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="40.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox>
+         <children>
+            <Label styleClass="title-label" text="Sélectionner les équipes du match" />
+         </children>
+         <VBox.margin>
+            <Insets left="40.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" spacing="40.0">
+         <children>
+            <VBox spacing="20">
+               <children>
+                  <Label styleClass="title-label" text="Équipe 1" />
+                  <JFXComboBox fx:id="comboBoxTeam1" editable="true" minWidth="200.0" promptText="Selectionner/Éditer une équipe" styleClass="jfx-combo-box">
+                     <items>
+                        <FXCollections fx:factory="observableArrayList">
+                           <Label text="Toulouse" />
+                           <Label text="Montpellier" />
+                           <Label text="Paris" />
+                           <Label text="Lyon" />
+                           <Label text="Bordeaux" />
+                        </FXCollections>
+                     </items>
+                  </JFXComboBox>
+               </children>
+            </VBox>
+            <VBox spacing="20">
+               <children>
+                  <Label styleClass="title-label" text="Équipe 2" />
+                  <JFXComboBox fx:id="comboBoxTeam2" editable="true" minWidth="200.0" promptText="Selectionner/Éditer une équipe" styleClass="jfx-combo-box">
+                     <items>
+                        <FXCollections fx:factory="observableArrayList">
+                           <Label text="Toulouse" />
+                           <Label text="Montpellier" />
+                           <Label text="Paris" />
+                           <Label text="Lyon" />
+                           <Label text="Bordeaux" />
+                        </FXCollections>
+                     </items>
+                  </JFXComboBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>

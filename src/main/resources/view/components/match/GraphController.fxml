@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+
+<LineChart fx:id="lineChart" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+    <xAxis>
+        <NumberAxis fx:id="yearAxis" label="Année" />
+    </xAxis>
+    <yAxis>
+        <CategoryAxis fx:id="matchAxis" label="Match" side="LEFT" />
+    </yAxis>
+</LineChart>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import com.jfoenix.controls.JFXDialog?>
+<?import com.jfoenix.controls.JFXDialogLayout?>
+
+<StackPane fx:id="rootSetting" xmlns="http://javafx.com/javafx/2.2" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+       <BorderPane>
+         <top>
+            <JFXDialog fx:id="dialogSetting">
+                <JFXDialogLayout>
+                    <heading>
+                        <Label>Aides</Label>
+                    </heading>
+                    <body>
+                        <Label>Vous pouvez ici créer un joueur en cliquant sur "Créer un nouveau joueur".
+                    </Label>
+                    </body>
+                    <actions>
+                        <JFXButton fx:id="buttonAcceptDialogSetting" styleClass="dialog-accept">Compris
+                        </JFXButton>
+                    </actions>
+                </JFXDialogLayout>
+            </JFXDialog>
+            <fx:include source="../bar/TitleSectionBar.fxml" BorderPane.alignment="CENTER_LEFT" />
+         </top>
+         <center>
+            <StackPane>
+             <children>
+                 <JFXButton fx:id="buttonAddNewPlayer" onAction="#addNewPlayer" prefHeight="200.0" styleClass="title-label" text="Créer un nouveau joueur" GridPane.rowIndex="0">
+                     <graphic>
+                         <StackPane styleClass="custom-jfx-list-view-icon-container">
+                             <FontIcon iconLiteral="mdi-account-plus" iconSize="24" styleClass="option-jfx-list-view-icon"/>
+                         </StackPane>
+                     </graphic>
+                 </JFXButton>
+             </children>
+            </StackPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>
