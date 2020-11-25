@@ -43,31 +43,31 @@
             <groupId>com.jfoenix</groupId>
             <artifactId>jfoenix</artifactId>
             <version>8.0.9</version>
-            <type>pom</type>
         </dependency>
+
         <!-- fontawesomefx lib !-->
-        <dependency>
-            <groupId>de.jensd</groupId>
-            <artifactId>fontawesomefx</artifactId>
-            <version>8.2</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>de.jensd</groupId>-->
+<!--            <artifactId>fontawesomefx</artifactId>-->
+<!--            <version>8.2</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>de.jensd</groupId>
             <artifactId>fontawesomefx</artifactId>
             <version>8.8</version>
         </dependency>
         <!-- datafx-flow lib-->
-<!--        <dependency>-->
-<!--            <groupId>org.javafxdata</groupId>-->
-<!--            <artifactId>datafx-flow</artifactId>-->
-<!--            <version>8.0b5</version>-->
-<!--        </dependency>-->
-<!--        &lt;!&ndash; datafx-core lib&ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.javafxdata</groupId>-->
-<!--            <artifactId>datafx-core</artifactId>-->
-<!--            <version>8.0b5</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.javafxdata</groupId>
+            <artifactId>datafx-flow</artifactId>
+            <version>8.10-SNAPSHOT</version>
+        </dependency>
+        <!-- datafx-core -->
+        <dependency>
+            <groupId>org.javafxdata</groupId>
+            <artifactId>datafx-core</artifactId>
+            <version>8.10-SNAPSHOT</version>
+        </dependency>
 <!--        &lt;!&ndash; datafx-samples lib&ndash;&gt;-->
 <!--        <dependency>-->
 <!--            <groupId>org.javafxdata</groupId>-->
@@ -79,7 +79,12 @@
         <repository>
             <id>central</id>
             <name>jcenter</name>
-            <url>http://jcenter.bintray.com</url>
+            <url>https://jcenter.bintray.com/</url>
+        </repository>
+        <repository>
+            <id>central</id>
+            <name>Maven Central</name>
+            <url>https://repo1.maven.org/maven2/</url>
         </repository>
     </repositories>
 
