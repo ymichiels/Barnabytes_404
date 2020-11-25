@@ -1,155 +1,152 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.StackPane?>
-
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXDialogLayout?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.HBox?>
-<?import com.jfoenix.controls.JFXDialog?>
-
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <StackPane fx:id="rootNewMatch" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
-   <children>
-      <BorderPane>
-         <top>
-            <JFXDialog fx:id="dialogNewMatchLeague">
-               <JFXDialogLayout>
-                  <heading>
-                     <Label>Aides</Label>
-                  </heading>
-                  <body>
-                     <VBox spacing="20">
-                        <children>
-                           <Label> Création d'un nouveau match.
-                           </Label>
-                           <Label> 1) Sélectionner avec la souris la league que vous souhaitez.
-                              <VBox.margin>
-                                 <Insets left="20.0" />
-                              </VBox.margin>
-                           </Label>
-                           <Label> 2) Puis cliquer sur suivant.
-                              <VBox.margin>
-                                 <Insets left="20.0" />
-                              </VBox.margin>
-                           </Label>
-                        </children>
-                     </VBox>
-                  </body>
-                  <actions>
-                     <JFXButton fx:id="buttonAcceptDialogNewMatchLeague" styleClass="dialog-accept">Compris
-                     </JFXButton>
-                  </actions>
-               </JFXDialogLayout>
-            </JFXDialog>
-            <JFXDialog fx:id="dialogNewMatchDate">
-               <JFXDialogLayout>
-                  <heading>
-                     <Label>Aides</Label>
-                  </heading>
-                  <body>
-                     <VBox spacing="20">
-                        <children>
-                           <Label> Création d'un nouveau match.
-                           </Label>
-                           <Label> 1) Sélectionner avec la souris ou le clavier la date du match ainsi que l'heure du match que vous souhaitez.
-                              <VBox.margin>
-                                 <Insets left="20.0" />
-                              </VBox.margin>
-                           </Label>
-                           <Label> 2) Puis cliquer sur suivant.
-                              <VBox.margin>
-                                 <Insets left="20.0" />
-                              </VBox.margin>
-                           </Label>
-                        </children>
-                     </VBox>
-                  </body>
-                  <actions>
-                     <JFXButton fx:id="buttonAcceptDialogNewMatchDate" styleClass="dialog-accept">Compris
-                     </JFXButton>
-                  </actions>
-               </JFXDialogLayout>
-            </JFXDialog>
-            <JFXDialog fx:id="dialogNewMatchTeam">
-               <JFXDialogLayout>
-                  <heading>
-                     <Label>Aides</Label>
-                  </heading>
-                  <body>
-                     <VBox spacing="20">
-                        <children>
-                           <Label> Création d'un nouveau match.
-                           </Label>
-                           <Label> 1) Sélectionner avec la souris les équipes que vous souhaitez voir s'affronter.
-                              <VBox.margin>
-                                 <Insets left="20.0" />
-                              </VBox.margin>
-                           </Label>
-                           <Label> 2) Si l'équipe voulue n'est pas présente, vous pouvez l'éditer dans le champ appropié.
-                              <VBox.margin>
-                                 <Insets left="20.0" />
-                              </VBox.margin>
-                           </Label>
-                           <Label> 3) Puis cliquer sur suivant.
-                              <VBox.margin>
-                                 <Insets left="20.0" />
-                              </VBox.margin>
-                           </Label>
-                        </children>
-                     </VBox>
-                  </body>
-                  <actions>
-                     <JFXButton fx:id="buttonAcceptDialogNewMatchTeam" styleClass="dialog-accept">Compris
-                     </JFXButton>
-                  </actions>
-               </JFXDialogLayout>
-            </JFXDialog>
-            <JFXDialog fx:id="dialogNewMatchPlayer">
-               <JFXDialogLayout>
-                  <heading>
-                     <Label>Aides</Label>
-                  </heading>
-                  <body>
-                     <VBox spacing="20">
-                        <children>
-                           <Label> Création d'un nouveau match.
-                           </Label>
-                           <Label> 1) Sélectionner avec la souris les joueurs que vous souhaitez voir sur la feuille de match.
-                              <VBox.margin>
-                                 <Insets left="20.0" />
-                              </VBox.margin>
-                           </Label>
-                           <Label> 2) Vous avez la possibilité si souhaité de modifier un joueur.
-                              <VBox.margin>
-                                 <Insets left="20.0" />
-                              </VBox.margin>
-                           </Label>
-                           <Label> 3) Puis cliquer sur terminer.
-                              <VBox.margin>
-                                 <Insets left="20.0" />
-                              </VBox.margin>
-                           </Label>
-                        </children>
-                     </VBox>
-                  </body>
-                  <actions>
-                     <JFXButton fx:id="buttonAcceptDialogNewMatchPlayer" styleClass="dialog-accept">Compris
-                     </JFXButton>
-                  </actions>
-               </JFXDialogLayout>
-            </JFXDialog>
-            <fx:include source="../bar/TitleSectionBarMin.fxml" BorderPane.alignment="CENTER_LEFT" />
-         </top>
-         <center>
-            <StackPane fx:id="centerPane" BorderPane.alignment="CENTER">
-            </StackPane>
-         </center>
-         <bottom>
-            <fx:include source="../bar/ToolActionBar.fxml" BorderPane.alignment="CENTER" />
-         </bottom>
-      </BorderPane>
-   </children>
+    <children>
+        <BorderPane>
+            <top>
+                <JFXDialog fx:id="dialogNewMatchLeague">
+                    <JFXDialogLayout>
+                        <heading>
+                            <Label>Aides</Label>
+                        </heading>
+                        <body>
+                            <VBox spacing="20">
+                                <children>
+                                    <Label>Création d'un nouveau match.
+                                    </Label>
+                                    <Label>1) Sélectionner avec la souris la league que vous souhaitez.
+                                        <VBox.margin>
+                                            <Insets left="20.0"/>
+                                        </VBox.margin>
+                                    </Label>
+                                    <Label>2) Puis cliquer sur suivant.
+                                        <VBox.margin>
+                                            <Insets left="20.0"/>
+                                        </VBox.margin>
+                                    </Label>
+                                </children>
+                            </VBox>
+                        </body>
+                        <actions>
+                            <JFXButton fx:id="buttonAcceptDialogNewMatchLeague" styleClass="dialog-accept">Compris
+                            </JFXButton>
+                        </actions>
+                    </JFXDialogLayout>
+                </JFXDialog>
+                <JFXDialog fx:id="dialogNewMatchDate">
+                    <JFXDialogLayout>
+                        <heading>
+                            <Label>Aides</Label>
+                        </heading>
+                        <body>
+                            <VBox spacing="20">
+                                <children>
+                                    <Label>Création d'un nouveau match.
+                                    </Label>
+                                    <Label>1) Sélectionner avec la souris ou le clavier la date du match ainsi que
+                                        l'heure du match que vous souhaitez.
+                                        <VBox.margin>
+                                            <Insets left="20.0"/>
+                                        </VBox.margin>
+                                    </Label>
+                                    <Label>2) Puis cliquer sur suivant.
+                                        <VBox.margin>
+                                            <Insets left="20.0"/>
+                                        </VBox.margin>
+                                    </Label>
+                                </children>
+                            </VBox>
+                        </body>
+                        <actions>
+                            <JFXButton fx:id="buttonAcceptDialogNewMatchDate" styleClass="dialog-accept">Compris
+                            </JFXButton>
+                        </actions>
+                    </JFXDialogLayout>
+                </JFXDialog>
+                <JFXDialog fx:id="dialogNewMatchTeam">
+                    <JFXDialogLayout>
+                        <heading>
+                            <Label>Aides</Label>
+                        </heading>
+                        <body>
+                            <VBox spacing="20">
+                                <children>
+                                    <Label>Création d'un nouveau match.
+                                    </Label>
+                                    <Label>1) Sélectionner avec la souris les équipes que vous souhaitez voir
+                                        s'affronter.
+                                        <VBox.margin>
+                                            <Insets left="20.0"/>
+                                        </VBox.margin>
+                                    </Label>
+                                    <Label>2) Si l'équipe voulue n'est pas présente, vous pouvez l'éditer dans le champ
+                                        appropié.
+                                        <VBox.margin>
+                                            <Insets left="20.0"/>
+                                        </VBox.margin>
+                                    </Label>
+                                    <Label>3) Puis cliquer sur suivant.
+                                        <VBox.margin>
+                                            <Insets left="20.0"/>
+                                        </VBox.margin>
+                                    </Label>
+                                </children>
+                            </VBox>
+                        </body>
+                        <actions>
+                            <JFXButton fx:id="buttonAcceptDialogNewMatchTeam" styleClass="dialog-accept">Compris
+                            </JFXButton>
+                        </actions>
+                    </JFXDialogLayout>
+                </JFXDialog>
+                <JFXDialog fx:id="dialogNewMatchPlayer">
+                    <JFXDialogLayout>
+                        <heading>
+                            <Label>Aides</Label>
+                        </heading>
+                        <body>
+                            <VBox spacing="20">
+                                <children>
+                                    <Label>Création d'un nouveau match.
+                                    </Label>
+                                    <Label>1) Sélectionner avec la souris les joueurs que vous souhaitez voir sur la
+                                        feuille de match.
+                                        <VBox.margin>
+                                            <Insets left="20.0"/>
+                                        </VBox.margin>
+                                    </Label>
+                                    <Label>2) Vous avez la possibilité si souhaité de modifier un joueur.
+                                        <VBox.margin>
+                                            <Insets left="20.0"/>
+                                        </VBox.margin>
+                                    </Label>
+                                    <Label>3) Puis cliquer sur terminer.
+                                        <VBox.margin>
+                                            <Insets left="20.0"/>
+                                        </VBox.margin>
+                                    </Label>
+                                </children>
+                            </VBox>
+                        </body>
+                        <actions>
+                            <JFXButton fx:id="buttonAcceptDialogNewMatchPlayer" styleClass="dialog-accept">Compris
+                            </JFXButton>
+                        </actions>
+                    </JFXDialogLayout>
+                </JFXDialog>
+                <fx:include source="../bar/TitleSectionBarMin.fxml" BorderPane.alignment="CENTER_LEFT"/>
+            </top>
+            <center>
+                <StackPane fx:id="centerPane" BorderPane.alignment="CENTER">
+                </StackPane>
+            </center>
+            <bottom>
+                <fx:include source="../bar/ToolActionBar.fxml" BorderPane.alignment="CENTER"/>
+            </bottom>
+        </BorderPane>
+    </children>
 </StackPane>

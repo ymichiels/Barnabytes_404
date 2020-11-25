@@ -7,22 +7,12 @@ package sample.controller.components.bar;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.svg.SVGGlyph;
-import com.jfoenix.svg.SVGGlyphLoader;
-import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
-import java.net.URL;
-import java.util.ResourceBundle;
-
 import io.datafx.controller.ViewController;
 import io.datafx.controller.ViewNode;
-import io.datafx.controller.flow.action.ActionTrigger;
 import io.datafx.controller.flow.action.BackAction;
-import io.datafx.controller.flow.action.LinkAction;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
-import sample.controller.components.dashboard.DashboardController;
 
 import javax.annotation.PostConstruct;
 

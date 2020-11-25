@@ -3,23 +3,15 @@ package sample.controller.components.dashboard;
 import com.jfoenix.controls.*;
 import io.datafx.controller.ViewController;
 import io.datafx.controller.ViewNode;
-import io.datafx.controller.flow.FlowException;
 import io.datafx.controller.flow.FlowHandler;
-import io.datafx.controller.flow.action.ActionMethod;
-import io.datafx.controller.flow.action.LinkAction;
 import io.datafx.controller.flow.context.ActionHandler;
 import io.datafx.controller.flow.context.FXMLViewFlowContext;
 import io.datafx.controller.flow.context.FlowActionHandler;
 import io.datafx.controller.flow.context.ViewFlowContext;
-import io.datafx.controller.util.VetoException;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.layout.StackPane;
 import sample.controller.main.MainController;
-import sample.controller.components.match.ResumeMatchsController;
-import sample.controller.components.rank.RankController;
-import sample.controller.components.setting.SettingController;
-import sample.controller.components.statistic.StatisticController;
 
 import javax.annotation.PostConstruct;
 
@@ -86,7 +78,7 @@ public final class DashboardController extends MainController {
 
     private FlowHandler sideMenuFlowHandler;
     private FlowHandler contentFlowHandler;
-    private JFXListView <JFXButton> listViewButtons;
+    private JFXListView<JFXButton> listViewButtons;
     private MainController main;
 
     @PostConstruct

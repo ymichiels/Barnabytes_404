@@ -35,7 +35,7 @@ public class Main extends Application {
             }
         }).start();
 
-        Flow flow  = new Flow(MainController.class);
+        Flow flow = new Flow(MainController.class);
         DefaultFlowContainer container = new DefaultFlowContainer();
         flowContext = new ViewFlowContext();
         flowContext.register("StageLogin", primaryStage);

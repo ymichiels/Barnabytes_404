@@ -4,36 +4,37 @@
 <?import com.jfoenix.controls.JFXTimePicker?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-
-<VBox fx:id="dateSelection" alignment="CENTER" spacing="40.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
-     <children>
-      <VBox spacing="20.0">
-         <children>
-               <Label styleClass="title-label" text="Sélectionner la date du match">
-               <VBox.margin>
-                  <Insets left="40.0" />
-               </VBox.margin></Label>
-               <HBox alignment="CENTER" spacing="40">
-                   <children>
-                       <JFXDatePicker promptText="Entrer ou selectionner une date" styleClass="jfx-date-picker" />
-                   </children>
-               </HBox>
-         </children>
-      </VBox>
-      <VBox spacing="20.0">
-         <children>
-               <Label styleClass="title-label" text="Sélectionner l'heure du début du match">
-               <VBox.margin>
-                  <Insets left="40.0" />
-               </VBox.margin></Label>
-               <HBox alignment="CENTER" spacing="40">
-                   <children>
-                       <JFXTimePicker promptText="Entrer ou selectionner un horaire" styleClass="jfx-time-picker" />
-                   </children>
-               </HBox>
-         </children>
-      </VBox>
-     </children>
+<?import javafx.scene.layout.*?>
+<VBox fx:id="dateSelection" alignment="CENTER" spacing="40.0" xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <VBox spacing="20.0">
+            <children>
+                <Label styleClass="title-label" text="Sélectionner la date du match">
+                    <VBox.margin>
+                        <Insets left="40.0"/>
+                    </VBox.margin>
+                </Label>
+                <HBox alignment="CENTER" spacing="40">
+                    <children>
+                        <JFXDatePicker promptText="Entrer ou selectionner une date" styleClass="jfx-date-picker"/>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+        <VBox spacing="20.0">
+            <children>
+                <Label styleClass="title-label" text="Sélectionner l'heure du début du match">
+                    <VBox.margin>
+                        <Insets left="40.0"/>
+                    </VBox.margin>
+                </Label>
+                <HBox alignment="CENTER" spacing="40">
+                    <children>
+                        <JFXTimePicker promptText="Entrer ou selectionner un horaire" styleClass="jfx-time-picker"/>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
 </VBox>

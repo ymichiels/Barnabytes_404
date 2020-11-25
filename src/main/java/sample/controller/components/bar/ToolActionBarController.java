@@ -5,7 +5,6 @@ import io.datafx.controller.ViewNode;
 import io.datafx.controller.flow.action.ActionTrigger;
 import io.datafx.controller.flow.action.BackAction;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 
 public class ToolActionBarController {
 
@@ -27,10 +26,12 @@ public class ToolActionBarController {
         return buttonBack;
     }
 
-    public JFXButton getButtonNext() { return buttonNext; }
+    public JFXButton getButtonNext() {
+        return buttonNext;
+    }
 
     public JFXButton getButtonFinish() {
         return buttonFinish;
     }
-    
+
 }

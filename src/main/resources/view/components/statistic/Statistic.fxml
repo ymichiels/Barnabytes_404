@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXDialog?>
 <?import com.jfoenix.controls.JFXDialogLayout?>
-<?import com.jfoenix.controls.JFXButton?>
-
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
 <StackPane fx:id="rootStatistic" xmlns="http://javafx.com/javafx/2.2" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <BorderPane>
@@ -25,12 +24,12 @@
                         </actions>
                     </JFXDialogLayout>
                 </JFXDialog>
-                <fx:include source="../bar/TitleSectionBar.fxml" BorderPane.alignment="CENTER_LEFT" />
+                <fx:include source="../bar/TitleSectionBar.fxml" BorderPane.alignment="CENTER_LEFT"/>
             </top>
             <center>
                 <BorderPane BorderPane.alignment="CENTER">
                     <center>
-                        <StackPane BorderPane.alignment="CENTER" />
+                        <StackPane BorderPane.alignment="CENTER"/>
                     </center>
                     <top>
                     </top>

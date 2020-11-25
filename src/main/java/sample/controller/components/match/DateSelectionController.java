@@ -5,13 +5,9 @@
  */
 package sample.controller.components.match;
 
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXDialog;
 import io.datafx.controller.ViewController;
 import io.datafx.controller.flow.context.FXMLViewFlowContext;
 import io.datafx.controller.flow.context.ViewFlowContext;
-import javafx.fxml.FXML;
-import javafx.scene.layout.StackPane;
 
 import javax.annotation.PostConstruct;
 
@@ -22,7 +18,7 @@ public class DateSelectionController {
     private ViewFlowContext viewFlowContext;
 
     @PostConstruct
-    public void init(){
+    public void init() {
     }
 }
 

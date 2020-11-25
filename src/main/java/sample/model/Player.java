@@ -1,12 +1,7 @@
 package sample.model;
 
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.*;
 
 public class Player extends RecursiveTreeObject<Player> {
 
@@ -58,8 +53,8 @@ public class Player extends RecursiveTreeObject<Player> {
         this.numberBlueCard = new SimpleIntegerProperty(0);
         this.numberGoal = new SimpleIntegerProperty(0);
     }
-    
-    public Player(Player player){
+
+    public Player(Player player) {
         this.firstName = player.firstNameProperty();
         this.lastName = player.lastNameProperty();
         this.id = player.getId();
@@ -109,23 +104,23 @@ public class Player extends RecursiveTreeObject<Player> {
     public void setId(int id) {
         id = id;
     }
-    
+
 //    public IntegerProperty idProperty() {
 //        return id;
 //    }
-    
-    public int getNumberLicence(){
+
+    public int getNumberLicence() {
         return numberLicence.get();
     }
-    
-    public IntegerProperty numberLicenceProperty(){
+
+    public IntegerProperty numberLicenceProperty() {
         return numberLicence;
     }
-    
+
     public IntegerProperty numberGoalProperty() {
         return numberGoal;
     }
-    
+
     public int getNumber() {
         return number.get();
     }
@@ -149,11 +144,11 @@ public class Player extends RecursiveTreeObject<Player> {
     public StringProperty postProperty() {
         return post;
     }
-    
+
     public void setLastClub(String lastClub) {
         this.lastClub.set(lastClub);
     }
-    
+
     public String getLastClub() {
         return lastClub.get();
     }
@@ -161,7 +156,7 @@ public class Player extends RecursiveTreeObject<Player> {
     public StringProperty lastClubProperty() {
         return lastClub;
     }
-    
+
     public int getNumberGoal() {
         return numberGoal.get();
     }
@@ -170,25 +165,33 @@ public class Player extends RecursiveTreeObject<Player> {
         this.numberGoal.set(numberGoal);
     }
 
-    public int getNumberYellowCard() { return numberYellowCard.get(); }
+    public int getNumberYellowCard() {
+        return numberYellowCard.get();
+    }
 
     public void setNumberYellowCard(int numberYellowCard) {
         this.numberYellowCard.set(numberYellowCard);
     }
 
-    public IntegerProperty numberYellowCardProperty() { return numberYellowCard; }
+    public IntegerProperty numberYellowCardProperty() {
+        return numberYellowCard;
+    }
 
     public void setNumberRedCard(int numberRedCard) {
         this.numberRedCard.set(numberRedCard);
     }
 
-    public IntegerProperty numberRedCardProperty() { return numberYellowCard; }
+    public IntegerProperty numberRedCardProperty() {
+        return numberYellowCard;
+    }
 
     public void setNumberBlueCard(int numberBlueCard) {
         this.numberBlueCard.set(numberBlueCard);
     }
 
-    public IntegerProperty numberBlueCardProperty() { return numberBlueCard; }
+    public IntegerProperty numberBlueCardProperty() {
+        return numberBlueCard;
+    }
 
     public int getNumberSave() {
         return numberSave.get();
@@ -201,19 +204,19 @@ public class Player extends RecursiveTreeObject<Player> {
     public IntegerProperty numberSaveProperty() {
         return numberSave;
     }
-    
+
     public boolean isGoalKeeper() {
         return goalKeeper.equals(goalKeeper);
     }
-    
+
     public BooleanProperty isGoalKeeperProperty() {
         return goalKeeper;
     }
-    
+
     public BooleanProperty isProProperty() {
         return pro;
     }
-    
+
 //    public void changeTeam(Team team){
 //        StringProperty teamName = team.clubNameProperty();
 //        this.team.findPlayer(this.getFirstName(), this.getLastName()).team.removePlayer(this);

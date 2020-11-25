@@ -8,8 +8,6 @@ package sample.controller.components.bar;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.svg.SVGGlyph;
 import io.datafx.controller.ViewController;
-import io.datafx.controller.ViewNode;
-import io.datafx.controller.flow.action.BackAction;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;

@@ -1,41 +1,24 @@
 package sample.controller.components.setting;
 
-import com.jfoenix.controls.*;
-import com.jfoenix.controls.cells.editors.IntegerTextFieldEditorBuilder;
-import com.jfoenix.controls.cells.editors.TextFieldEditorBuilder;
-import com.jfoenix.controls.cells.editors.base.GenericEditableTreeTableCell;
-import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXDatePicker;
+import com.jfoenix.controls.JFXDialog;
+import com.jfoenix.controls.JFXTimePicker;
 import io.datafx.controller.ViewController;
 import io.datafx.controller.ViewNode;
 import io.datafx.controller.flow.FlowException;
 import io.datafx.controller.flow.FlowHandler;
-import io.datafx.controller.flow.action.ActionTrigger;
 import io.datafx.controller.flow.context.FXMLViewFlowContext;
 import io.datafx.controller.flow.context.ViewFlowContext;
-import javafx.beans.binding.Bindings;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.control.TreeTableColumn;
 import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
 import javafx.stage.Window;
-import javafx.util.StringConverter;
-import sample.controller.components.bar.TitleSectionBarController;
 import sample.controller.components.bar.TitleSectionBarMinController;
-import sample.controller.components.dashboard.DashboardController;
-import sample.model.Match;
 import sample.model.Player;
-import sample.util.Create;
 
 import javax.annotation.PostConstruct;
-import java.security.SecureRandom;
-import java.util.Random;
-import java.util.function.Function;
 
 import static sample.controller.components.dashboard.DashboardController.initButtonInfos;
 

@@ -46,11 +46,11 @@
         </dependency>
 
         <!-- fontawesomefx lib !-->
-<!--        <dependency>-->
-<!--            <groupId>de.jensd</groupId>-->
-<!--            <artifactId>fontawesomefx</artifactId>-->
-<!--            <version>8.2</version>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>de.jensd</groupId>-->
+        <!--            <artifactId>fontawesomefx</artifactId>-->
+        <!--            <version>8.2</version>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>de.jensd</groupId>
             <artifactId>fontawesomefx</artifactId>
@@ -68,12 +68,12 @@
             <artifactId>datafx-core</artifactId>
             <version>8.10-SNAPSHOT</version>
         </dependency>
-<!--        &lt;!&ndash; datafx-samples lib&ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.javafxdata</groupId>-->
-<!--            <artifactId>datafx-samples</artifactId>-->
-<!--            <version>8.0b5</version>-->
-<!--        </dependency>-->
+        <!--        &lt;!&ndash; datafx-samples lib&ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.javafxdata</groupId>-->
+        <!--            <artifactId>datafx-samples</artifactId>-->
+        <!--            <version>8.0b5</version>-->
+        <!--        </dependency>-->
     </dependencies>
     <repositories>
         <repository>

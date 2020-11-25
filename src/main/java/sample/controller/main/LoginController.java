@@ -74,6 +74,7 @@ public class LoginController extends MainController {
     public JFXButton getButtonLogIn() {
         return buttonLogIn;
     }
+
     public String getStringButtonLogIn() {
         return buttonLogIn.getText();
     }

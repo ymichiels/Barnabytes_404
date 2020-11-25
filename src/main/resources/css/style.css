@@ -250,12 +250,12 @@
  *                                                                             *
  ******************************************************************************/
 
-.jfx-radio-button{
+.jfx-radio-button {
     -jfx-selected-color: #01579b;
     -jfx-unselected-color: #5A5A5A;
 }
 
-.jfx-radio-button .radio-container:hover{
+.jfx-radio-button .radio-container:hover {
     -fx-cursor: hand;
 }
 
@@ -362,7 +362,7 @@
     -fx-padding: 0.7em 0.57em;
     -fx-font-size: 14.0px;
     -jfx-button-type: RAISED;
-    -fx-text-fill : WHITE;
+    -fx-text-fill: WHITE;
     -fx-background-color: #002f6c;
     -fx-pref-width: 200.0;
 }
@@ -371,9 +371,9 @@
     -fx-padding: 0.7em 0.57em;
     -fx-font-size: 14.0px;
     -jfx-button-type: RAISED;
-    -fx-text-fill : WHITE;
+    -fx-text-fill: WHITE;
     -fx-background-color: #263238;
-    -fx-font-size : 14px;
+    -fx-font-size: 14px;
     -fx-pref-width: 200.0;
 }
 
@@ -381,9 +381,9 @@
     -fx-padding: 0.7em 0.57em;
     -fx-font-size: 14.0px;
     -jfx-button-type: RAISED;
-    -fx-text-fill : WHITE;
+    -fx-text-fill: WHITE;
     -fx-background-color: #28a745;
-    -fx-font-size : 14px;
+    -fx-font-size: 14px;
     -fx-pref-width: 200.0;
 }
 
@@ -391,9 +391,9 @@
     -fx-padding: 0.7em 0.57em;
     -fx-font-size: 14.0px;
     -jfx-button-type: RAISED;
-    -fx-text-fill : WHITE;
+    -fx-text-fill: WHITE;
     -fx-background-color: #dc3545;
-    -fx-font-size : 14px;
+    -fx-font-size: 14px;
     -fx-pref-width: 200.0;
 }
 
@@ -401,9 +401,9 @@
     -fx-padding: 0.7em 0.57em;
     -fx-font-size: 14.0px;
     -jfx-button-type: RAISED;
-    -fx-text-fill : WHITE;
+    -fx-text-fill: WHITE;
     -fx-background-color: #ffc107;
-    -fx-font-size : 14px;
+    -fx-font-size: 14px;
     -fx-pref-width: 200.0;
 }
 
@@ -411,9 +411,9 @@
     -fx-padding: 0.7em 0.57em;
     -fx-font-size: 14.0px;
     -jfx-button-type: RAISED;
-    -fx-text-fill : WHITE;
+    -fx-text-fill: WHITE;
     -fx-background-color: #343a40;
-    -fx-font-size : 14px;
+    -fx-font-size: 14px;
     -fx-pref-width: 200.0;
 }
 
@@ -976,7 +976,7 @@
 }
 
 
-.jfx-tab-pane .headers-region > .tab-selected-line{
+.jfx-tab-pane .headers-region > .tab-selected-line {
     -fx-pref-width: 1px !important;
     -fx-pref-height: 2px;
 }
@@ -991,7 +991,7 @@
 
 
 .jfx-tab-pane .headers-region .tab:closable {
-    -fx-border-color: rgba(255,255,255, .87);
+    -fx-border-color: rgba(255, 255, 255, .87);
     -fx-border-width: 0 2 0 0;
     -fx-border-style: dotted;
     -fx-border-insets: 8 0 8 0;
@@ -999,12 +999,13 @@
 }
 
 .jfx-tab-pane .headers-region .tab .tab-container .tab-label {
-    -fx-text-fill: rgba(255,255,255, .87);
+    -fx-text-fill: rgba(255, 255, 255, .87);
     -fx-font-weight: BOLD;
     -fx-padding: 6 10 6 10;
     -fx-font-size: 16;
 }
-.jfx-tab-pane .headers-region .tab:closable .tab-container .tab-label{
+
+.jfx-tab-pane .headers-region .tab:closable .tab-container .tab-label {
     -fx-padding: 0 8 0 6;
 }
 

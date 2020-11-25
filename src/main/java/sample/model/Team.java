@@ -1,17 +1,10 @@
 package sample.model;
 
-import java.io.Serializable;
-//import java.util.ArrayList;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.ListProperty;
-//import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleListProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
-//import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.*;
 import javafx.collections.ObservableList;
+
+import java.io.Serializable;
 
 public class Team extends RecursiveTreeObject<Team> implements Serializable {
 
@@ -31,7 +24,7 @@ public class Team extends RecursiveTreeObject<Team> implements Serializable {
     //private final ArrayList<Player> playersList;
     //private final ObjectProperty<ObservableList<Player>> playersList;
     private ListProperty<Player> playersList;
-    
+
     public Team(String teamName, String category) {
         this.teamName = new SimpleStringProperty(teamName);
         this.teamId = 1;
@@ -84,7 +77,7 @@ public class Team extends RecursiveTreeObject<Team> implements Serializable {
 //        this.playersList = team.playersListProperty();
 //    }
 
-    public void addPlayer (Player player) {
+    public void addPlayer(Player player) {
         if (playersList.isEmpty())
             playersList.add(player);
         else {
@@ -99,13 +92,13 @@ public class Team extends RecursiveTreeObject<Team> implements Serializable {
         }
     }
 
-    public void addPlayer (String firstName, String lastName, int number, boolean goalKeeper) {
+    public void addPlayer(String firstName, String lastName, int number, boolean goalKeeper) {
         Player player = new Player(firstName, lastName);
         addPlayer(player);
     }
 
-    public void removePlayer (Player player) {
-        if(player != null) {
+    public void removePlayer(Player player) {
+        if (player != null) {
             playersList.remove(player);
         }
     }
@@ -113,34 +106,31 @@ public class Team extends RecursiveTreeObject<Team> implements Serializable {
     public ObservableList<Player> getPlayersList() {
         return playersList.get();
     }
-    
-    public final void setPlayersList(ObservableList<Player> value) {	
+
+    public final void setPlayersList(ObservableList<Player> value) {
         playersList.set(value);
     }
-    
-    public final ListProperty<Player> playersListProperty() {		
+
+    public final ListProperty<Player> playersListProperty() {
         return playersList;
     }
-    
-    public String getCategory()
-    {
+
+    public String getCategory() {
         return category.get();
     }
-    
-    public StringProperty categoryProperty()
-    {
+
+    public StringProperty categoryProperty() {
         return category;
     }
-    
-    public void setCategory(String category)
-    {
+
+    public void setCategory(String category) {
         this.category.set(category);
     }
 
     public int getIdTeam() {
         return teamId;
     }
-    
+
 //    public IntegerProperty teamIdProperty() {
 //        return teamId;
 //    }
@@ -156,19 +146,19 @@ public class Team extends RecursiveTreeObject<Team> implements Serializable {
     public StringProperty teamNameProperty() {
         return teamName;
     }
-    
+
     public Integer getPoint() {
         return point.get();
     }
-    
+
     public IntegerProperty pointProperty() {
         return point;
     }
-    
+
     public void setPoint(Integer point) {
         this.point.set(point);
     }
-    
+
     public Player findPlayer(String firstName, String lastName) {
         int ind;
 
@@ -181,8 +171,7 @@ public class Team extends RecursiveTreeObject<Team> implements Serializable {
         return null;
     }
 
-    public String getCoach()
-    {
+    public String getCoach() {
         return coach;
     }
 

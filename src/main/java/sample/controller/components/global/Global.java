@@ -6,7 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -14,8 +13,8 @@ import sample.model.User;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.*;
 import java.util.List;
+import java.util.Optional;
 
 public final class Global {
 
@@ -55,7 +54,7 @@ public final class Global {
         ButtonType yes = new ButtonType(btnYes, ButtonBar.ButtonData.OK_DONE);
         ButtonType no = new ButtonType(btnNo, ButtonBar.ButtonData.CANCEL_CLOSE);
 
-        Alert alertDialog = new Alert(Alert.AlertType.CONFIRMATION, content, yes,  no);
+        Alert alertDialog = new Alert(Alert.AlertType.CONFIRMATION, content, yes, no);
         alertDialog.setTitle(appName);
         alertDialog.setHeaderText(header);
 
@@ -64,7 +63,7 @@ public final class Global {
         return result.orElse(no) == yes;
     }
 
-    public static void navigateModal(URL location, String windowName){
+    public static void navigateModal(URL location, String windowName) {
         Stage stage = new Stage();
 
         try {
@@ -96,7 +95,7 @@ public final class Global {
         }
     }
 
-    public static void setUserProfile(Label username, ImageView buttonLogOut){
+    public static void setUserProfile(Label username, ImageView buttonLogOut) {
         username.setText(connectedUser.getFirstName() + " " + connectedUser.getLastName());
         // set disconnect tooltip
         Tooltip.install(buttonLogOut, new Tooltip("Déconnexion"));
@@ -132,7 +131,7 @@ public final class Global {
     }
 
 
-    public static void closeWindow(String windowName){
+    public static void closeWindow(String windowName) {
         List<Window> windows = Window.getWindows();
         for (Window win : windows) {
             if (win.getTitle().contains(windowName)) {

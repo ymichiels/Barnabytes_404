@@ -1,433 +1,589 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXListView?>
-<?import com.jfoenix.controls.JFXTabPane?>
-<?import com.jfoenix.controls.JFXTextField?>
-<?import com.jfoenix.controls.JFXTreeTableColumn?>
-<?import com.jfoenix.controls.JFXTreeTableView?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
-
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
-<?import com.jfoenix.controls.JFXDialog?>
-<?import com.jfoenix.controls.JFXDialogLayout?>
-
 <StackPane xmlns:fx="http://javafx.com/fxml/1" fx:id="rootMatch" xmlns="http://javafx.com/javafx/11.0.1">
-   <children>
-       <BorderPane>
-           <top>
-               <JFXDialog fx:id="dialogLaunchMatch">
-                   <JFXDialogLayout>
-                       <heading>
-                           <Label>Aides</Label>
-                       </heading>
-                       <body>
-                           <VBox spacing="20">
-                               <children>
-                                   <Label> Lancement d'un match.
-                                   </Label>
-                                   <Label> Pour commencer le match, cliquer sur le bouton "Lancer".
-                                       <VBox.margin>
-                                           <Insets left="20.0" />
-                                       </VBox.margin>
-                                   </Label>
-                                   <Label> Pour réaliser les actions d'un match, réaliser dans l'ordre les actions suivantes :
-                                       <VBox.margin>
-                                           <Insets left="20.0" />
-                                       </VBox.margin></Label>
-                                   <HBox alignment="CENTER">
-                                       <children>
-                                           <VBox spacing="20">
-                                               <children>
-                                                   <Label> 1) Cliquer sur l'action souhaitée dans la barre d'action.
-                                                       <VBox.margin>
-                                                           <Insets left="80.0" />
-                                                       </VBox.margin>
-                                                   </Label>
-                                                   <Label> 2) Double-cliquez sur le joueur pour lequel vous souhaitez réaliser l'action
-                                                       <VBox.margin>
-                                                           <Insets left="80.0" />
-                                                       </VBox.margin>
-                                                   </Label>
-                                                   <Label> 3) Les actions s'ajouteront dans le panel "Toutes les actions du matches".
-                                                       <VBox.margin>
-                                                           <Insets left="80.0" />
-                                                       </VBox.margin>
-                                                   </Label>
-                                               </children>
-                                           </VBox>
-                                       </children>
-                                   </HBox>
-                                   <Label> Pour accéder aux statistiques en live du match, cliquer sur le bouton en haut à gauche "Statistiques".
-                                       <VBox.margin>
-                                           <Insets left="20.0" />
-                                       </VBox.margin>
-                                   </Label>
-                                   <Label> Pour accéder aux informations supplémentaire du match, cliquer sur le bouton en haut à gauche "Informations".
-                                       <VBox.margin>
-                                           <Insets left="20.0" />
-                                       </VBox.margin>
-                                   </Label>
-                               </children>
-                           </VBox>
-                       </body>
-                       <actions>
-                           <JFXButton fx:id="buttonAcceptDialogLaunchMatch" styleClass="dialog-accept">Compris
-                           </JFXButton>
-                       </actions>
-                   </JFXDialogLayout>
-               </JFXDialog>
-               <fx:include source="../bar/TitleSectionBarMin.fxml" BorderPane.alignment="CENTER_LEFT" />
-           </top>
-           <center>
-               <JFXTabPane fx:id="mainTabPane" BorderPane.alignment="CENTER" styleClass="jfx-tab-pane">
-                   <tabs>
-                       <Tab fx:id="tabPaneMatch" text="Match en direct">
-                           <content>
-                               <StackPane>
-                                   <children>
-                                       <VBox spacing="40.0">
-                                           <children>
-                                            <StackPane>
+    <children>
+        <BorderPane>
+            <top>
+                <JFXDialog fx:id="dialogLaunchMatch">
+                    <JFXDialogLayout>
+                        <heading>
+                            <Label>Aides</Label>
+                        </heading>
+                        <body>
+                            <VBox spacing="20">
+                                <children>
+                                    <Label>Lancement d'un match.
+                                    </Label>
+                                    <Label>Pour commencer le match, cliquer sur le bouton "Lancer".
+                                        <VBox.margin>
+                                            <Insets left="20.0"/>
+                                        </VBox.margin>
+                                    </Label>
+                                    <Label>Pour réaliser les actions d'un match, réaliser dans l'ordre les actions
+                                        suivantes :
+                                        <VBox.margin>
+                                            <Insets left="20.0"/>
+                                        </VBox.margin>
+                                    </Label>
+                                    <HBox alignment="CENTER">
+                                        <children>
+                                            <VBox spacing="20">
                                                 <children>
-                                                    <HBox spacing="40.0">
-                                                        <children>
-                                                            <Label styleClass="title-label" text="Actions :" />
-                                                            <JFXListView fx:id="listViewActions" orientation="HORIZONTAL" prefWidth="1200.0" styleClass="custom-jfx-list-view" />
-                                                        </children>
-                                                    </HBox>
+                                                    <Label>1) Cliquer sur l'action souhaitée dans la barre d'action.
+                                                        <VBox.margin>
+                                                            <Insets left="80.0"/>
+                                                        </VBox.margin>
+                                                    </Label>
+                                                    <Label>2) Double-cliquez sur le joueur pour lequel vous souhaitez
+                                                        réaliser l'action
+                                                        <VBox.margin>
+                                                            <Insets left="80.0"/>
+                                                        </VBox.margin>
+                                                    </Label>
+                                                    <Label>3) Les actions s'ajouteront dans le panel "Toutes les actions
+                                                        du matches".
+                                                        <VBox.margin>
+                                                            <Insets left="80.0"/>
+                                                        </VBox.margin>
+                                                    </Label>
                                                 </children>
-                                            </StackPane>
-                                               <HBox alignment="CENTER" spacing="20.0">
-                                                   <children>
-                                                       <VBox alignment="CENTER" spacing="20.0">
-                                                           <children>
-                                                               <HBox alignment="CENTER">
-                                                                   <children>
-                                                                       <VBox spacing="20.0">
-                                                                           <children>
-                                                                               <JFXTextField labelFloat="true" fx:id="textFieldCoachNameTeam1" promptText="Coach Domicile" />
-                                                                               <Separator />
-                                                                               <HBox alignment="CENTER_LEFT">
-                                                                                   <children>
-                                                                                       <Label styleClass="title-label" text="Joueurs" />
-                                                                                       <Label fx:id="treeTableViewCount1" minWidth="60.0" styleClass="title-label" />
-                                                                                       <Separator orientation="VERTICAL">
-                                                                                           <padding>
-                                                                                               <Insets left="10.0" right="10.0" />
-                                                                                           </padding>
-                                                                                       </Separator>
-                                                                                       <JFXButton fx:id="treeTableViewRemove1" buttonType="FLAT" text="-" />
-                                                                                       <JFXButton fx:id="treeTableViewAdd1" buttonType="FLAT" text="+" />
-                                                                                       <Label styleClass="title-label" />
-                                                                                       <StackPane>
-                                                                                           <children>
-                                                                                               <StackPane maxWidth="200" StackPane.alignment="CENTER_RIGHT">
-                                                                                                   <children>
-                                                                                                       <JFXTextField labelFloat="true" fx:id="searchField1" promptText="Rechercher un joueur..." />
-                                                                                                   </children>
-                                                                                               </StackPane>
-                                                                                           </children>
-                                                                                       </StackPane>
-                                                                                   </children>
-                                                                               </HBox>
-                                                                           </children>
-                                                                       </VBox>
-                                                                   </children>
-                                                               </HBox>
-                                                               <JFXTreeTableView fx:id="treeTableViewTeam1">
-                                                                   <columns>
-                                                                       <JFXTreeTableColumn fx:id="column1Team1" minWidth="20.0" resizable="true" text="Poste joueur" />
-                                                                       <JFXTreeTableColumn fx:id="column2Team1" minWidth="20.0" resizable="true" text="Num joueur" />
-                                                                       <JFXTreeTableColumn fx:id="column3Team1" minWidth="20.0" resizable="true" text="Nom joueur" />
-                                                                       <JFXTreeTableColumn fx:id="column4Team1" minWidth="20.0" resizable="true" text="Carton Jaune" />
-                                                                       <JFXTreeTableColumn fx:id="column5Team1" minWidth="20.0" resizable="true" text="Carton Rouge" />
-                                                                       <JFXTreeTableColumn fx:id="column6Team1" minWidth="20.0" resizable="true" text="Nb buts" />
-                                                                   </columns>
-                                                               </JFXTreeTableView>
-                                                           </children>
-                                                       </VBox>
-                                                       <VBox alignment="CENTER" spacing="20.0">
-                                                           <children>
-                                                               <JFXButton fx:id="buttonLaunch" onAction="#launchMatch" prefWidth="400.0" styleClass="h1-label" text="Lancer">
-                                                                   <graphic>
-                                                                       <StackPane styleClass="custom-jfx-list-view-icon-container">
-                                                                           <FontIcon fx:id="iconStart" iconLiteral="mdi-play" iconSize="32" styleClass="option-jfx-list-view-icon"/>
-                                                                       </StackPane>
-                                                                   </graphic>
-                                                               </JFXButton>
-                                                               <Label fx:id="labelTimer" styleClass="h1-label" text="00:00" />
-                                                               <HBox alignment="CENTER" spacing="40.0">
-                                                                   <children>
-                                                                       <Label fx:id="labelScoreTeam1" styleClass="h1-label" text="Score1">
-                                                                           <HBox.margin>
-                                                                               <Insets />
-                                                                           </HBox.margin>
-                                                                       </Label>
-                                                                       <Label styleClass="h1-label" text="-" />
-                                                                       <Label fx:id="labelScoreTeam2" styleClass="h1-label" text="Score2">
-                                                                           <HBox.margin>
-                                                                               <Insets />
-                                                                           </HBox.margin>
-                                                                       </Label>
-                                                                   </children>
-                                                               </HBox>
-                                                               <HBox alignment="CENTER" spacing="20.0">
-                                                                   <children>
-                                                                       <JFXTextField labelFloat="true" fx:id="textFieldTeamName1" alignment="CENTER" promptText="Equipe Domicile" styleClass="title-label" />
-                                                                       <Label styleClass="subtitle-label" text="VS" />
-                                                                       <JFXTextField labelFloat="true" fx:id="textFieldTeamName2" alignment="CENTER" promptText="Equipe Exterieure" styleClass="title-label" />
-                                                                   </children>
-                                                               </HBox>
-                                                               <JFXTabPane fx:id="tabPaneActions" prefHeight="400.0" styleClass="jfx-tab-pane">
-                                                                   <tabs>
-                                                                       <Tab fx:id="tabPaneAllAction" closable="false" text="Toutes les actions du match">
-                                                                           <content>
-                                                                               <StackPane fx:id="anchorPaneTabPane">
-                                                                                   <children>
-                                                                                       <JFXListView fx:id="listViewAllAction" />
-                                                                                   </children>
-                                                                               </StackPane>
-                                                                           </content>
-                                                                       </Tab>
-                                                                       <Tab fx:id="tabPaneImportantAction" closable="false" text="Actions importantes">
-                                                                           <content>
-                                                                               <StackPane>
-                                                                                   <children>
-                                                                                       <JFXListView fx:id="listViewImportantAction" />
-                                                                                   </children>
-                                                                               </StackPane>
-                                                                           </content>
-                                                                       </Tab>
-                                                                   </tabs>
-                                                               </JFXTabPane>
-                                                           </children>
-                                                       </VBox>
-                                                       <VBox alignment="CENTER" spacing="20">
-                                                           <children>
-                                                               <HBox alignment="CENTER">
-                                                                   <children>
-                                                                       <VBox spacing="20.0">
-                                                                           <children>
-                                                                               <JFXTextField labelFloat="true" fx:id="textFieldCoachNameTeam2" promptText="CoachExterieur" />
-                                                                               <Separator prefWidth="200.0" />
-                                                                               <HBox alignment="CENTER_LEFT">
-                                                                                   <children>
-                                                                                       <Label styleClass="title-label" text="Joueurs" />
-                                                                                       <Label fx:id="treeTableViewCount2" minWidth="80" styleClass="title-label" />
-                                                                                       <Separator orientation="VERTICAL">
-                                                                                           <padding>
-                                                                                               <Insets left="10.0" right="10.0" />
-                                                                                           </padding>
-                                                                                       </Separator>
-                                                                                       <JFXButton fx:id="treeTableViewRemove2" buttonType="FLAT" text="-" />
-                                                                                       <JFXButton fx:id="treeTableViewAdd2" buttonType="FLAT" text="+" />
-                                                                                       <Label styleClass="title-label" />
-                                                                                       <StackPane>
-                                                                                           <children>
-                                                                                               <StackPane maxWidth="200" StackPane.alignment="CENTER_RIGHT">
-                                                                                                   <children>
-                                                                                                       <JFXTextField labelFloat="true" fx:id="searchField2" promptText="Rechercher un joueur..." />
-                                                                                                   </children>
-                                                                                               </StackPane>
-                                                                                           </children>
-                                                                                       </StackPane>
-                                                                                   </children>
-                                                                               </HBox>
-                                                                           </children>
-                                                                       </VBox>
-                                                                   </children>
-                                                               </HBox>
-                                                               <JFXTreeTableView fx:id="treeTableViewTeam2">
-                                                                   <columns>
-                                                                       <JFXTreeTableColumn fx:id="column1Team2" minWidth="20.0" resizable="true" text="Poste joueur" />
-                                                                       <JFXTreeTableColumn fx:id="column2Team2" minWidth="20.0" resizable="true" text="Num joueur" />
-                                                                       <JFXTreeTableColumn fx:id="column3Team2" minWidth="20.0" resizable="true" text="Nom joueur" />
-                                                                       <JFXTreeTableColumn fx:id="column4Team2" minWidth="20.0" resizable="true" text="Carton Jaune" />
-                                                                       <JFXTreeTableColumn fx:id="column5Team2" minWidth="20.0" resizable="true" text="Carton Rouge" />
-                                                                       <JFXTreeTableColumn fx:id="column6Team2" minWidth="20.0" resizable="true" text="Nb buts" />
-                                                                   </columns>
-                                                               </JFXTreeTableView>
-                                                           </children>
-                                                       </VBox>
-                                                   </children>
-                                               </HBox>
-                                           </children>
-                                 <padding>
-                                    <Insets top="20.0" />
-                                 </padding>
-                                       </VBox>
-                                   </children>
-                               </StackPane>
-                           </content>
-                       </Tab>
-                       <Tab fx:id="tabPaneStatistic" text="Statistiques">
-                           <content>
-                               <StackPane>
-                                   <children>
-                                       <VBox alignment="TOP_CENTER" spacing="40.0">
-                                           <children>
-                                               <GridPane alignment="CENTER" hgap="20.0" vgap="20.0">
-                                                   <columnConstraints>
-                                                       <ColumnConstraints hgrow="SOMETIMES" />
-                                                       <ColumnConstraints hgrow="SOMETIMES" />
-                                                       <ColumnConstraints hgrow="SOMETIMES" />
-                                                   </columnConstraints>
-                                                   <rowConstraints>
-                                                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                   </rowConstraints>
-                                                   <children>
-                                          <Label fx:id="labelNameTeam1" styleClass="h1-label" text="Domicile" GridPane.halignment="CENTER" />
-                                                     <Label styleClass="h1-label" text="Statistiques de l'équipe :" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
-                                          <Label fx:id="labelNameTeam2" styleClass="h1-label" text="Extérieur" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
-                                                       <Label fx:id="labelStrikeTeam1" styleClass="title-label" text="Tirs domicile" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-                                                       </Label>
-                                                       <Label styleClass="title-label" text="Tirs" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-                                                       </Label>
-                                                       <Label fx:id="labelStrikeTeam2" styleClass="title-label" text="Tirs exterieur" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-                                                       </Label>
-                                                       <Label fx:id="labelFoulTeam1" styleClass="title-label" text="Fautes domicile" GridPane.halignment="CENTER" GridPane.rowIndex="2">
-                                                       </Label>
-                                                       <Label styleClass="title-label" text="Fautes" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
-                                                       </Label>
-                                                       <Label fx:id="labelFoulTeam2" styleClass="title-label" text="Fautes extérieur" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
-                                                       </Label>
-                                                       <Label fx:id="labelSaveTeam1" styleClass="title-label" text="Arrêt domicile" GridPane.halignment="CENTER" GridPane.rowIndex="3">
-                                                       </Label>
-                                                       <Label styleClass="title-label" text="Arrêt" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
-                                                       </Label>
-                                                       <Label fx:id="labelSaveTeam2" styleClass="title-label" text="Arrêt extérieur" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
-                                                       </Label>
-                                                       <Label fx:id="labelYellowCardTeam1" styleClass="title-label" text="Cartons jaunes domicile" GridPane.halignment="CENTER" GridPane.rowIndex="4">
-                                                       </Label>
-                                                       <Label styleClass="title-label" text="Cartons jaunes" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4">
-                                                       </Label>
-                                                       <Label fx:id="labelYellowCardTeam2" styleClass="title-label" text="Cartons jaunes extérieur" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
-                                                       </Label>
-                                                       <Label fx:id="labelRedCardTeam1" styleClass="title-label" text="Cartons rouges domicile" GridPane.halignment="CENTER" GridPane.rowIndex="5">
-                                                       </Label>
-                                                       <Label styleClass="title-label" text="Cartons rouges" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5">
-                                                       </Label>
-                                                       <Label fx:id="labelRedCardTeam2" styleClass="title-label" text="Cartons rouges extérieur" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5">
-                                                       </Label>
-                                                       <Label fx:id="labelBlueCardTeam1" styleClass="title-label" text="Cartons bleus domicile" GridPane.halignment="CENTER" GridPane.rowIndex="6">
-                                                       </Label>
-                                                       <Label styleClass="title-label" text="Cartons bleus" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6">
-                                                       </Label>
-                                                       <Label fx:id="labelBlueCardTeam2" styleClass="title-label" text="Cartons bleus extérieur" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="6">
-                                                       </Label>
-                                                       <Label fx:id="labelExclusionTeam1" styleClass="title-label" text="Exclusion domicile" GridPane.halignment="CENTER" GridPane.rowIndex="7">
-                                                       </Label>
-                                                       <Label styleClass="title-label" text="Exclusion" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7">
-                                                       </Label>
-                                                       <Label fx:id="labelExclusionTeam2" styleClass="title-label" text="Exclusion extérieur" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7">
-                                                       </Label>
-                                                       <Label fx:id="labelDeadTimeTeam1" styleClass="title-label" text="Temps morts domicile" GridPane.halignment="CENTER" GridPane.rowIndex="8">
-                                                       </Label>
-                                                       <Label styleClass="title-label" text="Temps morts" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8">
-                                                       </Label>
-                                                       <Label fx:id="labelDeadTimeTeam2" styleClass="title-label" text="Temps morts extérieur" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="8">
-                                                       </Label>
-                                                   </children>
-                                               </GridPane>
-                                           </children>
-                                 <padding>
-                                    <Insets top="20.0" />
-                                 </padding>
-                                       </VBox>
-                                   </children>
-                               </StackPane>
-                           </content>
-                       </Tab>
-                       <Tab fx:id="tabPaneInfos" closable="false" text="Informations">
-                           <content>
-                               <StackPane>
-                                   <children>
-                                        <VBox spacing="20.0">
-                                         <children>
-                                            <Label text="Arbitre de la rencontre"  styleClass="title-label" >
-                                       <padding>
-                                          <Insets left="80.0" />
-                                       </padding></Label>
-                                            <HBox alignment="TOP_CENTER">
-                                               <children>
-                                                  <JFXTextField fx:id="textFieldRefereeName" labelFloat="true" prefWidth="200.0" promptText="Nom de l'arbitre de la rencontre" />
-                                               </children>
-                                            </HBox>
-                                            <Separator>
-                                               <padding>
-                                                  <Insets bottom="10.0" top="10.0" />
-                                               </padding>
-                                            </Separator>
-                                            <Label text="Chronométreur de la rencontre" styleClass="title-label">
-                                       <padding>
-                                          <Insets left="80.0" />
-                                       </padding></Label>
-                                            <HBox alignment="TOP_CENTER">
-                                               <children>
-                                                  <JFXTextField labelFloat="true" prefWidth="200.0" promptText="Chronométreur de la rencontre" />
-                                               </children>
-                                            </HBox>
-                                            <Separator>
-                                               <padding>
-                                                  <Insets bottom="10.0" top="10.0" />
-                                               </padding>
-                                            </Separator>
-                                            <Label text="Secrétaire de la rencontre" styleClass="title-label">
-                                       <padding>
-                                          <Insets left="80.0" />
-                                       </padding></Label>
-                                            <HBox alignment="TOP_CENTER">
-                                               <children>
-                                                  <JFXTextField labelFloat="true" prefWidth="200.0" promptText="Secrétaire de la rencontre" />
-                                               </children>
-                                            </HBox>
-                                            <Separator>
-                                               <padding>
-                                                  <Insets bottom="10.0" top="10.0" />
-                                               </padding>
-                                            </Separator>
-                                            <Label text="Délégué de la rencontre" styleClass="title-label">
-                                       <padding>
-                                          <Insets left="80.0" />
-                                       </padding></Label>
-                                            <HBox alignment="TOP_CENTER">
-                                               <children>
-                                                  <JFXTextField labelFloat="true" prefWidth="200.0" promptText="Délégué de la rencontre" />
-                                               </children>
-                                            </HBox>
-                                         </children>
-                                 <StackPane.margin>
-                                    <Insets />
-                                 </StackPane.margin>
-                                 <padding>
-                                    <Insets top="20.0" />
-                                 </padding>
+                                            </VBox>
+                                        </children>
+                                    </HBox>
+                                    <Label>Pour accéder aux statistiques en live du match, cliquer sur le bouton en haut
+                                        à gauche "Statistiques".
+                                        <VBox.margin>
+                                            <Insets left="20.0"/>
+                                        </VBox.margin>
+                                    </Label>
+                                    <Label>Pour accéder aux informations supplémentaire du match, cliquer sur le bouton
+                                        en haut à gauche "Informations".
+                                        <VBox.margin>
+                                            <Insets left="20.0"/>
+                                        </VBox.margin>
+                                    </Label>
+                                </children>
+                            </VBox>
+                        </body>
+                        <actions>
+                            <JFXButton fx:id="buttonAcceptDialogLaunchMatch" styleClass="dialog-accept">Compris
+                            </JFXButton>
+                        </actions>
+                    </JFXDialogLayout>
+                </JFXDialog>
+                <fx:include source="../bar/TitleSectionBarMin.fxml" BorderPane.alignment="CENTER_LEFT"/>
+            </top>
+            <center>
+                <JFXTabPane fx:id="mainTabPane" BorderPane.alignment="CENTER" styleClass="jfx-tab-pane">
+                    <tabs>
+                        <Tab fx:id="tabPaneMatch" text="Match en direct">
+                            <content>
+                                <StackPane>
+                                    <children>
+                                        <VBox spacing="40.0">
+                                            <children>
+                                                <StackPane>
+                                                    <children>
+                                                        <HBox spacing="40.0">
+                                                            <children>
+                                                                <Label styleClass="title-label" text="Actions :"/>
+                                                                <JFXListView fx:id="listViewActions"
+                                                                             orientation="HORIZONTAL" prefWidth="1200.0"
+                                                                             styleClass="custom-jfx-list-view"/>
+                                                            </children>
+                                                        </HBox>
+                                                    </children>
+                                                </StackPane>
+                                                <HBox alignment="CENTER" spacing="20.0">
+                                                    <children>
+                                                        <VBox alignment="CENTER" spacing="20.0">
+                                                            <children>
+                                                                <HBox alignment="CENTER">
+                                                                    <children>
+                                                                        <VBox spacing="20.0">
+                                                                            <children>
+                                                                                <JFXTextField labelFloat="true"
+                                                                                              fx:id="textFieldCoachNameTeam1"
+                                                                                              promptText="Coach Domicile"/>
+                                                                                <Separator/>
+                                                                                <HBox alignment="CENTER_LEFT">
+                                                                                    <children>
+                                                                                        <Label styleClass="title-label"
+                                                                                               text="Joueurs"/>
+                                                                                        <Label fx:id="treeTableViewCount1"
+                                                                                               minWidth="60.0"
+                                                                                               styleClass="title-label"/>
+                                                                                        <Separator
+                                                                                                orientation="VERTICAL">
+                                                                                            <padding>
+                                                                                                <Insets left="10.0"
+                                                                                                        right="10.0"/>
+                                                                                            </padding>
+                                                                                        </Separator>
+                                                                                        <JFXButton
+                                                                                                fx:id="treeTableViewRemove1"
+                                                                                                buttonType="FLAT"
+                                                                                                text="-"/>
+                                                                                        <JFXButton
+                                                                                                fx:id="treeTableViewAdd1"
+                                                                                                buttonType="FLAT"
+                                                                                                text="+"/>
+                                                                                        <Label styleClass="title-label"/>
+                                                                                        <StackPane>
+                                                                                            <children>
+                                                                                                <StackPane
+                                                                                                        maxWidth="200"
+                                                                                                        StackPane.alignment="CENTER_RIGHT">
+                                                                                                    <children>
+                                                                                                        <JFXTextField
+                                                                                                                labelFloat="true"
+                                                                                                                fx:id="searchField1"
+                                                                                                                promptText="Rechercher un joueur..."/>
+                                                                                                    </children>
+                                                                                                </StackPane>
+                                                                                            </children>
+                                                                                        </StackPane>
+                                                                                    </children>
+                                                                                </HBox>
+                                                                            </children>
+                                                                        </VBox>
+                                                                    </children>
+                                                                </HBox>
+                                                                <JFXTreeTableView fx:id="treeTableViewTeam1">
+                                                                    <columns>
+                                                                        <JFXTreeTableColumn fx:id="column1Team1"
+                                                                                            minWidth="20.0"
+                                                                                            resizable="true"
+                                                                                            text="Poste joueur"/>
+                                                                        <JFXTreeTableColumn fx:id="column2Team1"
+                                                                                            minWidth="20.0"
+                                                                                            resizable="true"
+                                                                                            text="Num joueur"/>
+                                                                        <JFXTreeTableColumn fx:id="column3Team1"
+                                                                                            minWidth="20.0"
+                                                                                            resizable="true"
+                                                                                            text="Nom joueur"/>
+                                                                        <JFXTreeTableColumn fx:id="column4Team1"
+                                                                                            minWidth="20.0"
+                                                                                            resizable="true"
+                                                                                            text="Carton Jaune"/>
+                                                                        <JFXTreeTableColumn fx:id="column5Team1"
+                                                                                            minWidth="20.0"
+                                                                                            resizable="true"
+                                                                                            text="Carton Rouge"/>
+                                                                        <JFXTreeTableColumn fx:id="column6Team1"
+                                                                                            minWidth="20.0"
+                                                                                            resizable="true"
+                                                                                            text="Nb buts"/>
+                                                                    </columns>
+                                                                </JFXTreeTableView>
+                                                            </children>
+                                                        </VBox>
+                                                        <VBox alignment="CENTER" spacing="20.0">
+                                                            <children>
+                                                                <JFXButton fx:id="buttonLaunch" onAction="#launchMatch"
+                                                                           prefWidth="400.0" styleClass="h1-label"
+                                                                           text="Lancer">
+                                                                    <graphic>
+                                                                        <StackPane
+                                                                                styleClass="custom-jfx-list-view-icon-container">
+                                                                            <FontIcon fx:id="iconStart"
+                                                                                      iconLiteral="mdi-play"
+                                                                                      iconSize="32"
+                                                                                      styleClass="option-jfx-list-view-icon"/>
+                                                                        </StackPane>
+                                                                    </graphic>
+                                                                </JFXButton>
+                                                                <Label fx:id="labelTimer" styleClass="h1-label"
+                                                                       text="00:00"/>
+                                                                <HBox alignment="CENTER" spacing="40.0">
+                                                                    <children>
+                                                                        <Label fx:id="labelScoreTeam1"
+                                                                               styleClass="h1-label" text="Score1">
+                                                                            <HBox.margin>
+                                                                                <Insets/>
+                                                                            </HBox.margin>
+                                                                        </Label>
+                                                                        <Label styleClass="h1-label" text="-"/>
+                                                                        <Label fx:id="labelScoreTeam2"
+                                                                               styleClass="h1-label" text="Score2">
+                                                                            <HBox.margin>
+                                                                                <Insets/>
+                                                                            </HBox.margin>
+                                                                        </Label>
+                                                                    </children>
+                                                                </HBox>
+                                                                <HBox alignment="CENTER" spacing="20.0">
+                                                                    <children>
+                                                                        <JFXTextField labelFloat="true"
+                                                                                      fx:id="textFieldTeamName1"
+                                                                                      alignment="CENTER"
+                                                                                      promptText="Equipe Domicile"
+                                                                                      styleClass="title-label"/>
+                                                                        <Label styleClass="subtitle-label" text="VS"/>
+                                                                        <JFXTextField labelFloat="true"
+                                                                                      fx:id="textFieldTeamName2"
+                                                                                      alignment="CENTER"
+                                                                                      promptText="Equipe Exterieure"
+                                                                                      styleClass="title-label"/>
+                                                                    </children>
+                                                                </HBox>
+                                                                <JFXTabPane fx:id="tabPaneActions" prefHeight="400.0"
+                                                                            styleClass="jfx-tab-pane">
+                                                                    <tabs>
+                                                                        <Tab fx:id="tabPaneAllAction" closable="false"
+                                                                             text="Toutes les actions du match">
+                                                                            <content>
+                                                                                <StackPane fx:id="anchorPaneTabPane">
+                                                                                    <children>
+                                                                                        <JFXListView
+                                                                                                fx:id="listViewAllAction"/>
+                                                                                    </children>
+                                                                                </StackPane>
+                                                                            </content>
+                                                                        </Tab>
+                                                                        <Tab fx:id="tabPaneImportantAction"
+                                                                             closable="false"
+                                                                             text="Actions importantes">
+                                                                            <content>
+                                                                                <StackPane>
+                                                                                    <children>
+                                                                                        <JFXListView
+                                                                                                fx:id="listViewImportantAction"/>
+                                                                                    </children>
+                                                                                </StackPane>
+                                                                            </content>
+                                                                        </Tab>
+                                                                    </tabs>
+                                                                </JFXTabPane>
+                                                            </children>
+                                                        </VBox>
+                                                        <VBox alignment="CENTER" spacing="20">
+                                                            <children>
+                                                                <HBox alignment="CENTER">
+                                                                    <children>
+                                                                        <VBox spacing="20.0">
+                                                                            <children>
+                                                                                <JFXTextField labelFloat="true"
+                                                                                              fx:id="textFieldCoachNameTeam2"
+                                                                                              promptText="CoachExterieur"/>
+                                                                                <Separator prefWidth="200.0"/>
+                                                                                <HBox alignment="CENTER_LEFT">
+                                                                                    <children>
+                                                                                        <Label styleClass="title-label"
+                                                                                               text="Joueurs"/>
+                                                                                        <Label fx:id="treeTableViewCount2"
+                                                                                               minWidth="80"
+                                                                                               styleClass="title-label"/>
+                                                                                        <Separator
+                                                                                                orientation="VERTICAL">
+                                                                                            <padding>
+                                                                                                <Insets left="10.0"
+                                                                                                        right="10.0"/>
+                                                                                            </padding>
+                                                                                        </Separator>
+                                                                                        <JFXButton
+                                                                                                fx:id="treeTableViewRemove2"
+                                                                                                buttonType="FLAT"
+                                                                                                text="-"/>
+                                                                                        <JFXButton
+                                                                                                fx:id="treeTableViewAdd2"
+                                                                                                buttonType="FLAT"
+                                                                                                text="+"/>
+                                                                                        <Label styleClass="title-label"/>
+                                                                                        <StackPane>
+                                                                                            <children>
+                                                                                                <StackPane
+                                                                                                        maxWidth="200"
+                                                                                                        StackPane.alignment="CENTER_RIGHT">
+                                                                                                    <children>
+                                                                                                        <JFXTextField
+                                                                                                                labelFloat="true"
+                                                                                                                fx:id="searchField2"
+                                                                                                                promptText="Rechercher un joueur..."/>
+                                                                                                    </children>
+                                                                                                </StackPane>
+                                                                                            </children>
+                                                                                        </StackPane>
+                                                                                    </children>
+                                                                                </HBox>
+                                                                            </children>
+                                                                        </VBox>
+                                                                    </children>
+                                                                </HBox>
+                                                                <JFXTreeTableView fx:id="treeTableViewTeam2">
+                                                                    <columns>
+                                                                        <JFXTreeTableColumn fx:id="column1Team2"
+                                                                                            minWidth="20.0"
+                                                                                            resizable="true"
+                                                                                            text="Poste joueur"/>
+                                                                        <JFXTreeTableColumn fx:id="column2Team2"
+                                                                                            minWidth="20.0"
+                                                                                            resizable="true"
+                                                                                            text="Num joueur"/>
+                                                                        <JFXTreeTableColumn fx:id="column3Team2"
+                                                                                            minWidth="20.0"
+                                                                                            resizable="true"
+                                                                                            text="Nom joueur"/>
+                                                                        <JFXTreeTableColumn fx:id="column4Team2"
+                                                                                            minWidth="20.0"
+                                                                                            resizable="true"
+                                                                                            text="Carton Jaune"/>
+                                                                        <JFXTreeTableColumn fx:id="column5Team2"
+                                                                                            minWidth="20.0"
+                                                                                            resizable="true"
+                                                                                            text="Carton Rouge"/>
+                                                                        <JFXTreeTableColumn fx:id="column6Team2"
+                                                                                            minWidth="20.0"
+                                                                                            resizable="true"
+                                                                                            text="Nb buts"/>
+                                                                    </columns>
+                                                                </JFXTreeTableView>
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </HBox>
+                                            </children>
+                                            <padding>
+                                                <Insets top="20.0"/>
+                                            </padding>
                                         </VBox>
                                     </children>
                                 </StackPane>
                             </content>
-                       </Tab>
-                   </tabs>
-               </JFXTabPane>
+                        </Tab>
+                        <Tab fx:id="tabPaneStatistic" text="Statistiques">
+                            <content>
+                                <StackPane>
+                                    <children>
+                                        <VBox alignment="TOP_CENTER" spacing="40.0">
+                                            <children>
+                                                <GridPane alignment="CENTER" hgap="20.0" vgap="20.0">
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES"/>
+                                                        <ColumnConstraints hgrow="SOMETIMES"/>
+                                                        <ColumnConstraints hgrow="SOMETIMES"/>
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                    </rowConstraints>
+                                                    <children>
+                                                        <Label fx:id="labelNameTeam1" styleClass="h1-label"
+                                                               text="Domicile" GridPane.halignment="CENTER"/>
+                                                        <Label styleClass="h1-label" text="Statistiques de l'équipe :"
+                                                               GridPane.columnIndex="1" GridPane.halignment="CENTER"/>
+                                                        <Label fx:id="labelNameTeam2" styleClass="h1-label"
+                                                               text="Extérieur" GridPane.columnIndex="2"
+                                                               GridPane.halignment="CENTER"/>
+                                                        <Label fx:id="labelStrikeTeam1" styleClass="title-label"
+                                                               text="Tirs domicile" GridPane.halignment="CENTER"
+                                                               GridPane.rowIndex="1">
+                                                        </Label>
+                                                        <Label styleClass="title-label" text="Tirs"
+                                                               GridPane.columnIndex="1" GridPane.halignment="CENTER"
+                                                               GridPane.rowIndex="1">
+                                                        </Label>
+                                                        <Label fx:id="labelStrikeTeam2" styleClass="title-label"
+                                                               text="Tirs exterieur" GridPane.columnIndex="2"
+                                                               GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                                        </Label>
+                                                        <Label fx:id="labelFoulTeam1" styleClass="title-label"
+                                                               text="Fautes domicile" GridPane.halignment="CENTER"
+                                                               GridPane.rowIndex="2">
+                                                        </Label>
+                                                        <Label styleClass="title-label" text="Fautes"
+                                                               GridPane.columnIndex="1" GridPane.halignment="CENTER"
+                                                               GridPane.rowIndex="2">
+                                                        </Label>
+                                                        <Label fx:id="labelFoulTeam2" styleClass="title-label"
+                                                               text="Fautes extérieur" GridPane.columnIndex="2"
+                                                               GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                                                        </Label>
+                                                        <Label fx:id="labelSaveTeam1" styleClass="title-label"
+                                                               text="Arrêt domicile" GridPane.halignment="CENTER"
+                                                               GridPane.rowIndex="3">
+                                                        </Label>
+                                                        <Label styleClass="title-label" text="Arrêt"
+                                                               GridPane.columnIndex="1" GridPane.halignment="CENTER"
+                                                               GridPane.rowIndex="3">
+                                                        </Label>
+                                                        <Label fx:id="labelSaveTeam2" styleClass="title-label"
+                                                               text="Arrêt extérieur" GridPane.columnIndex="2"
+                                                               GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                                                        </Label>
+                                                        <Label fx:id="labelYellowCardTeam1" styleClass="title-label"
+                                                               text="Cartons jaunes domicile"
+                                                               GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                                                        </Label>
+                                                        <Label styleClass="title-label" text="Cartons jaunes"
+                                                               GridPane.columnIndex="1" GridPane.halignment="CENTER"
+                                                               GridPane.rowIndex="4">
+                                                        </Label>
+                                                        <Label fx:id="labelYellowCardTeam2" styleClass="title-label"
+                                                               text="Cartons jaunes extérieur" GridPane.columnIndex="2"
+                                                               GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                                                        </Label>
+                                                        <Label fx:id="labelRedCardTeam1" styleClass="title-label"
+                                                               text="Cartons rouges domicile"
+                                                               GridPane.halignment="CENTER" GridPane.rowIndex="5">
+                                                        </Label>
+                                                        <Label styleClass="title-label" text="Cartons rouges"
+                                                               GridPane.columnIndex="1" GridPane.halignment="CENTER"
+                                                               GridPane.rowIndex="5">
+                                                        </Label>
+                                                        <Label fx:id="labelRedCardTeam2" styleClass="title-label"
+                                                               text="Cartons rouges extérieur" GridPane.columnIndex="2"
+                                                               GridPane.halignment="CENTER" GridPane.rowIndex="5">
+                                                        </Label>
+                                                        <Label fx:id="labelBlueCardTeam1" styleClass="title-label"
+                                                               text="Cartons bleus domicile"
+                                                               GridPane.halignment="CENTER" GridPane.rowIndex="6">
+                                                        </Label>
+                                                        <Label styleClass="title-label" text="Cartons bleus"
+                                                               GridPane.columnIndex="1" GridPane.halignment="CENTER"
+                                                               GridPane.rowIndex="6">
+                                                        </Label>
+                                                        <Label fx:id="labelBlueCardTeam2" styleClass="title-label"
+                                                               text="Cartons bleus extérieur" GridPane.columnIndex="2"
+                                                               GridPane.halignment="CENTER" GridPane.rowIndex="6">
+                                                        </Label>
+                                                        <Label fx:id="labelExclusionTeam1" styleClass="title-label"
+                                                               text="Exclusion domicile" GridPane.halignment="CENTER"
+                                                               GridPane.rowIndex="7">
+                                                        </Label>
+                                                        <Label styleClass="title-label" text="Exclusion"
+                                                               GridPane.columnIndex="1" GridPane.halignment="CENTER"
+                                                               GridPane.rowIndex="7">
+                                                        </Label>
+                                                        <Label fx:id="labelExclusionTeam2" styleClass="title-label"
+                                                               text="Exclusion extérieur" GridPane.columnIndex="2"
+                                                               GridPane.halignment="CENTER" GridPane.rowIndex="7">
+                                                        </Label>
+                                                        <Label fx:id="labelDeadTimeTeam1" styleClass="title-label"
+                                                               text="Temps morts domicile" GridPane.halignment="CENTER"
+                                                               GridPane.rowIndex="8">
+                                                        </Label>
+                                                        <Label styleClass="title-label" text="Temps morts"
+                                                               GridPane.columnIndex="1" GridPane.halignment="CENTER"
+                                                               GridPane.rowIndex="8">
+                                                        </Label>
+                                                        <Label fx:id="labelDeadTimeTeam2" styleClass="title-label"
+                                                               text="Temps morts extérieur" GridPane.columnIndex="2"
+                                                               GridPane.halignment="CENTER" GridPane.rowIndex="8">
+                                                        </Label>
+                                                    </children>
+                                                </GridPane>
+                                            </children>
+                                            <padding>
+                                                <Insets top="20.0"/>
+                                            </padding>
+                                        </VBox>
+                                    </children>
+                                </StackPane>
+                            </content>
+                        </Tab>
+                        <Tab fx:id="tabPaneInfos" closable="false" text="Informations">
+                            <content>
+                                <StackPane>
+                                    <children>
+                                        <VBox spacing="20.0">
+                                            <children>
+                                                <Label text="Arbitre de la rencontre" styleClass="title-label">
+                                                    <padding>
+                                                        <Insets left="80.0"/>
+                                                    </padding>
+                                                </Label>
+                                                <HBox alignment="TOP_CENTER">
+                                                    <children>
+                                                        <JFXTextField fx:id="textFieldRefereeName" labelFloat="true"
+                                                                      prefWidth="200.0"
+                                                                      promptText="Nom de l'arbitre de la rencontre"/>
+                                                    </children>
+                                                </HBox>
+                                                <Separator>
+                                                    <padding>
+                                                        <Insets bottom="10.0" top="10.0"/>
+                                                    </padding>
+                                                </Separator>
+                                                <Label text="Chronométreur de la rencontre" styleClass="title-label">
+                                                    <padding>
+                                                        <Insets left="80.0"/>
+                                                    </padding>
+                                                </Label>
+                                                <HBox alignment="TOP_CENTER">
+                                                    <children>
+                                                        <JFXTextField labelFloat="true" prefWidth="200.0"
+                                                                      promptText="Chronométreur de la rencontre"/>
+                                                    </children>
+                                                </HBox>
+                                                <Separator>
+                                                    <padding>
+                                                        <Insets bottom="10.0" top="10.0"/>
+                                                    </padding>
+                                                </Separator>
+                                                <Label text="Secrétaire de la rencontre" styleClass="title-label">
+                                                    <padding>
+                                                        <Insets left="80.0"/>
+                                                    </padding>
+                                                </Label>
+                                                <HBox alignment="TOP_CENTER">
+                                                    <children>
+                                                        <JFXTextField labelFloat="true" prefWidth="200.0"
+                                                                      promptText="Secrétaire de la rencontre"/>
+                                                    </children>
+                                                </HBox>
+                                                <Separator>
+                                                    <padding>
+                                                        <Insets bottom="10.0" top="10.0"/>
+                                                    </padding>
+                                                </Separator>
+                                                <Label text="Délégué de la rencontre" styleClass="title-label">
+                                                    <padding>
+                                                        <Insets left="80.0"/>
+                                                    </padding>
+                                                </Label>
+                                                <HBox alignment="TOP_CENTER">
+                                                    <children>
+                                                        <JFXTextField labelFloat="true" prefWidth="200.0"
+                                                                      promptText="Délégué de la rencontre"/>
+                                                    </children>
+                                                </HBox>
+                                            </children>
+                                            <StackPane.margin>
+                                                <Insets/>
+                                            </StackPane.margin>
+                                            <padding>
+                                                <Insets top="20.0"/>
+                                            </padding>
+                                        </VBox>
+                                    </children>
+                                </StackPane>
+                            </content>
+                        </Tab>
+                    </tabs>
+                </JFXTabPane>
             </center>
         </BorderPane>
     </children>

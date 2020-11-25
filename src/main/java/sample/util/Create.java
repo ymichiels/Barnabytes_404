@@ -46,8 +46,8 @@ public class Create {
         childStage.setResizable(resizable);
         childStage.initModality(Modality.WINDOW_MODAL);
         childStage.initOwner(primaryStage);
-        JFXDecorator decorator = new JFXDecorator(childStage, content,true,true,true);
-        decorator.setOnCloseButtonAction(() ->{
+        JFXDecorator decorator = new JFXDecorator(childStage, content, true, true, true);
+        decorator.setOnCloseButtonAction(() -> {
             childStage.close();
         });
         SVGGlyph glyphSportHandball = SVGGlyphLoader.getIcoMoonGlyph("icomoon.svg.sports_handball");

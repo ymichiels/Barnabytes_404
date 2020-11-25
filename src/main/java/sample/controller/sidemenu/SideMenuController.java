@@ -1,30 +1,27 @@
 package sample.controller.sidemenu;
 
 import com.jfoenix.controls.JFXListView;
-import com.jfoenix.controls.JFXPopup;
-import io.datafx.controller.ViewNode;
-import io.datafx.controller.flow.context.FXMLViewFlowContext;
-import io.datafx.controller.flow.context.ViewFlowContext;
-import sample.controller.components.dashboard.DashboardController;
-import sample.controller.components.match.ResumeMatchsController;
-import sample.controller.components.rank.RankController;
 import io.datafx.controller.ViewController;
+import io.datafx.controller.ViewNode;
 import io.datafx.controller.flow.Flow;
 import io.datafx.controller.flow.FlowException;
 import io.datafx.controller.flow.FlowHandler;
 import io.datafx.controller.flow.action.ActionTrigger;
+import io.datafx.controller.flow.context.FXMLViewFlowContext;
+import io.datafx.controller.flow.context.ViewFlowContext;
 import io.datafx.controller.util.VetoException;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
-
-import javax.annotation.PostConstruct;
-import java.util.Objects;
 import javafx.scene.layout.StackPane;
+import sample.controller.components.dashboard.DashboardController;
+import sample.controller.components.match.ResumeMatchsController;
+import sample.controller.components.rank.RankController;
 import sample.controller.components.setting.SettingController;
 import sample.controller.components.statistic.StatisticController;
-import sample.controller.main.LoginController;
+
+import javax.annotation.PostConstruct;
 
 @ViewController(value = "/view/SideMenu.fxml", title = "Application de Handball")
 public class SideMenuController {
@@ -62,8 +59,8 @@ public class SideMenuController {
         FlowHandler contentFlowHandler = (FlowHandler) viewFlowContext.getRegisteredObject("ContentFlowHandler");
         sideList.propagateMouseEventsToParent();
         sideList.getSelectionModel().selectedItemProperty().addListener((o, oldVal, newVal) -> {
-            new Thread(()->{
-                Platform.runLater(()->{
+            new Thread(() -> {
+                Platform.runLater(() -> {
                     if (newVal != null) {
                         try {
                             contentFlowHandler.handle(newVal.getId());

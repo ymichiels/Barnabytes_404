@@ -1,7 +1,5 @@
 package sample.model;
 
-import javafx.beans.property.StringProperty;
-
 public class Action {
 
     protected int id;
@@ -46,7 +44,7 @@ public class Action {
         this.timer = timer;
     }
 
-//    public Action(int id, int matchId, int playerId, Team team, String timer, String action, Player player) {
+    //    public Action(int id, int matchId, int playerId, Team team, String timer, String action, Player player) {
 //        this.id = id;
 //        this.timer = timer;
 //        this.action = action;
@@ -58,19 +56,25 @@ public class Action {
         return id;
     }
 
-    public void setId(int id) { this.id = id; }
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getTimer() {
         return timer;
     }
 
-    public void setTimer(String timer) { this.timer = timer; }
+    public void setTimer(String timer) {
+        this.timer = timer;
+    }
 
     public String getAction() {
         return action;
     }
 
-    public void setAction(String action) { this.action= action; }
+    public void setAction(String action) {
+        this.action = action;
+    }
 
     //public StringProperty actionProperty() { return action; }
 
@@ -78,19 +82,27 @@ public class Action {
         return player;
     }
 
-    public void setPlayer(String player) { this.player = player; }
+    public void setPlayer(String player) {
+        this.player = player;
+    }
 
     public String getReferee() {
         return referee;
     }
 
-    public void setReferee(String referee) { this.referee = referee; }
+    public void setReferee(String referee) {
+        this.referee = referee;
+    }
 
     //public StringProperty playerProperty() { return player; }
 
-    public String getTeamName() { return teamName; }
+    public String getTeamName() {
+        return teamName;
+    }
 
-    public void setTeamName(String teamName) { this.teamName= teamName; }
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
+    }
 
     //public StringProperty teamNameProperty() { return teamName; }
 

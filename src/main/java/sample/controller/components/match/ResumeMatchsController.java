@@ -34,7 +34,7 @@ import sample.util.Navigate;
 
 import javax.annotation.PostConstruct;
 
-@ViewController(value = "/view/components/match/ResumeMatchs.fxml",  title = "Application de Handball")
+@ViewController(value = "/view/components/match/ResumeMatchs.fxml", title = "Application de Handball")
 public class ResumeMatchsController extends TitleSectionBarController {
 
     public static final String CONTENT_PANE = "ContentPane";
@@ -140,7 +140,7 @@ public class ResumeMatchsController extends TitleSectionBarController {
     }
 
     @FXML
-    private void addNewMatch () {
+    private void addNewMatch() {
         try {
             Flow addNewMatchFlow = new Flow(NewMatchController.class);
             FlowHandler addNewMatchFlowHandler = addNewMatchFlow.createHandler(viewFlowContext);
@@ -153,7 +153,7 @@ public class ResumeMatchsController extends TitleSectionBarController {
     }
 
     @FXML
-    private void startNewMatch () {
+    private void startNewMatch() {
         try {
             Flow addNewMatchFlow = new Flow(MatchController.class);
             FlowHandler addNewMatchFlowHandler = addNewMatchFlow.createHandler(viewFlowContext);
@@ -167,7 +167,7 @@ public class ResumeMatchsController extends TitleSectionBarController {
     }
 
     @FXML
-    private void refresh () {
+    private void refresh() {
         masonryPane.getChildren().clear();
     }
 

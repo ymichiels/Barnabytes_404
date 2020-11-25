@@ -5,22 +5,16 @@
  */
 package sample.controller.components.match;
 
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXRadioButton;
 import io.datafx.controller.ViewController;
 import io.datafx.controller.ViewNode;
 import io.datafx.controller.flow.FlowException;
-import io.datafx.controller.flow.action.ActionTrigger;
 import io.datafx.controller.flow.context.FXMLViewFlowContext;
 import io.datafx.controller.flow.context.ViewFlowContext;
 import javafx.fxml.FXML;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.layout.StackPane;
 
 import javax.annotation.PostConstruct;
-
-import static sample.controller.components.dashboard.DashboardController.initButtonInfos;
 
 @ViewController(value = "/view/components/match/LeagueSelection.fxml", title = "Sélection de la league")
 public class LeagueSelectionController {

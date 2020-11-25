@@ -1,184 +1,206 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.StackPane?>
-<?import org.kordamp.ikonli.javafx.FontIcon?>
-<?import com.jfoenix.controls.JFXDialogLayout?>
-<?import com.jfoenix.controls.JFXDialog?>
-<?import javafx.scene.layout.VBox?>
-
-<?import javafx.scene.layout.HBox?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.*?>
 <StackPane fx:id="root"
            xmlns="http://javafx.com/javafx/2.2" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <BorderPane>
-         <bottom>
-            <Label fx:id="labelCopyright" styleClass="copyright-label" text="Handball gestion App 2019 ©" BorderPane.alignment="CENTER_RIGHT">
-            </Label>
-         </bottom>
-         <top>
-            <Label fx:id="labelWelcome" alignment="CENTER" contentDisplay="CENTER" styleClass="h1-label" text="Bienvenue" textAlignment="CENTER" BorderPane.alignment="CENTER">
-            </Label>
-         </top>
-         <center>
-            <StackPane BorderPane.alignment="CENTER">
-               <children>
-                  <GridPane alignment="CENTER" hgap="10.0" vgap="10.0" StackPane.alignment="CENTER">
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                     <children>
-                        <JFXButton fx:id="buttonMatch" prefHeight="300.0" prefWidth="300.0" styleClass="title-label" text="Matches" GridPane.halignment="CENTER">
-                            <graphic>
-                                <StackPane styleClass="custom-jfx-list-view-icon-container">
-                                    <FontIcon iconLiteral="mdi-soccer" iconSize="24" styleClass="option-jfx-list-view-icon"/>
-                                </StackPane>
-                            </graphic>
-                        </JFXButton>
-                         <JFXButton fx:id="buttonSetting" prefHeight="300.0" prefWidth="300.0" styleClass="title-label" text="Réglages" GridPane.rowIndex="1" GridPane.halignment="CENTER">
-                             <graphic>
-                                 <StackPane styleClass="custom-jfx-list-view-icon-container">
-                                     <FontIcon iconLiteral="mdi-tune" iconSize="24" styleClass="option-jfx-list-view-icon"/>
-                                 </StackPane>
-                             </graphic>
-                         </JFXButton>
-                         <JFXButton fx:id="buttonRank" prefHeight="300.0" prefWidth="300.0" styleClass="title-label" text="Classements" GridPane.columnIndex="1" GridPane.halignment="CENTER">
-                             <graphic>
-                                 <StackPane styleClass="custom-jfx-list-view-icon-container">
-                                     <FontIcon iconLiteral="mdi-trophy-variant" iconSize="24" styleClass="option-jfx-list-view-icon"/>
-                                 </StackPane>
-                             </graphic>
-                         </JFXButton>
-                         <JFXButton fx:id="buttonInfo" prefHeight="300.0" prefWidth="300.0" styleClass="title-label" text="A propos" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER">
-                             <graphic>
-                                 <StackPane styleClass="custom-jfx-list-view-icon-container">
-                                     <FontIcon iconLiteral="mdi-information" iconSize="24" styleClass="option-jfx-list-view-icon"/>
-                                 </StackPane>
-                             </graphic>
-                         </JFXButton>
-                         <JFXButton fx:id="buttonStatistic" prefHeight="300.0" prefWidth="300.0" styleClass="title-label" text="Statistiques" GridPane.columnIndex="2" GridPane.halignment="CENTER">
-                             <graphic>
-                                 <StackPane styleClass="custom-jfx-list-view-icon-container">
-                                     <FontIcon iconLiteral="mdi-chart-line" iconSize="24" styleClass="option-jfx-list-view-icon"/>
-                                 </StackPane>
-                             </graphic>
-                         </JFXButton>
-                         <JFXButton fx:id="buttonLogout" prefHeight="300.0" prefWidth="300.0" styleClass="title-label" text="Quitter" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.halignment="CENTER">
-                             <graphic>
-                                 <StackPane styleClass="custom-jfx-list-view-icon-container">
-                                     <FontIcon iconLiteral="mdi-logout" iconSize="24" styleClass="option-jfx-list-view-icon"/>
-                                 </StackPane>
-                             </graphic>
-                         </JFXButton>
-                         <JFXDialog fx:id="dialog">
-                             <JFXDialogLayout>
-                                 <heading>
-                                     <Label>A propos</Label>
-                                 </heading>
-                                 <body>
-                                     <Label>Cette application a été réalisé dans le cadre d'un projet en IHM, réalisée par Yan Michiels et Quentin Pavageau.
-                                     </Label>
-                                 </body>
-                                 <actions>
-                                     <JFXButton fx:id="buttonAccept" styleClass="dialog-accept">Utiliser l'application
-                                     </JFXButton>
-                                 </actions>
-                             </JFXDialogLayout>
-                         </JFXDialog>
-                         <JFXDialog fx:id="dialog2">
-                             <JFXDialogLayout>
-                                 <heading>
-                                     <Label>
-                                         <graphic>
-                                             <StackPane styleClass="custom-jfx-list-view-icon-container">
-                                                 <FontIcon iconLiteral="mdi-alert" iconSize="24" styleClass="option-jfx-list-view-icon"/>
-                                             </StackPane>
-                                         </graphic>
-                                         Attention
-                                         <graphic>
-                                             <StackPane styleClass="custom-jfx-list-view-icon-container">
-                                                 <FontIcon iconLiteral="mdi-alert" iconSize="24" styleClass="option-jfx-list-view-icon"/>
-                                             </StackPane>
-                                         </graphic>
-                                     </Label>
-                                 </heading>
-                                 <body>
-                                     <VBox spacing="20" alignment="CENTER">
-                                         <Label>
-                                             <text>
-                                                 Afin d'éviter des bugs graphiques je vous recommande de naviguer dans l'application via la panneau latéral.
-                                                 Pour y accéder, cliquer sur l'icone :
-                                             </text>
-                                         </Label>
-                                         <Label>
-                                             <graphic>
-                                                 <StackPane styleClass="custom-jfx-list-view-icon-container">
-                                                     <FontIcon iconLiteral="mdi-menu" iconSize="24" styleClass="option-jfx-list-view-icon" />
-                                                 </StackPane>
-                                             </graphic>
-                                         </Label>
-                                     </VBox>
-                                 </body>
-                                 <actions>
-                                     <JFXButton fx:id="buttonPopupValidate" styleClass="dialog-accept">J'ai compris
-                                     </JFXButton>
-                                 </actions>
-                             </JFXDialogLayout>
-                         </JFXDialog>
-                         <JFXDialog fx:id="dialogLeave">
-                             <JFXDialogLayout>
-                                 <heading>
-                                     <Label>
-                                         <graphic>
-                                             <StackPane styleClass="custom-jfx-list-view-icon-container">
-                                                 <FontIcon iconLiteral="mdi-alert" iconSize="24" styleClass="option-jfx-list-view-icon"/>
-                                             </StackPane>
-                                         </graphic>
-                                         Attention
-                                         <graphic>
-                                             <StackPane styleClass="custom-jfx-list-view-icon-container">
-                                                 <FontIcon iconLiteral="mdi-alert" iconSize="24" styleClass="option-jfx-list-view-icon"/>
-                                             </StackPane>
-                                         </graphic>
-                                     </Label>
-                                 </heading>
-                                 <body>
-                                     <VBox spacing="20" alignment="CENTER">
-                                         <Label>
-                                             <text>
-                                                 Vous êtes sur le point de quitter de l'application, Vueillez confirmer
-                                             </text>
-                                         </Label>
-                                     </VBox>
-                                 </body>
-                                 <actions>
-                                     <HBox spacing="40.0">
-                                        <children>
-                                            <JFXButton fx:id="buttonPopupValidateYes" styleClass="dialog-accept">Oui
+    <children>
+        <BorderPane>
+            <bottom>
+                <Label fx:id="labelCopyright" styleClass="copyright-label" text="Handball gestion App 2019 ©"
+                       BorderPane.alignment="CENTER_RIGHT">
+                </Label>
+            </bottom>
+            <top>
+                <Label fx:id="labelWelcome" alignment="CENTER" contentDisplay="CENTER" styleClass="h1-label"
+                       text="Bienvenue" textAlignment="CENTER" BorderPane.alignment="CENTER">
+                </Label>
+            </top>
+            <center>
+                <StackPane BorderPane.alignment="CENTER">
+                    <children>
+                        <GridPane alignment="CENTER" hgap="10.0" vgap="10.0" StackPane.alignment="CENTER">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                            </rowConstraints>
+                            <children>
+                                <JFXButton fx:id="buttonMatch" prefHeight="300.0" prefWidth="300.0"
+                                           styleClass="title-label" text="Matches" GridPane.halignment="CENTER">
+                                    <graphic>
+                                        <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                            <FontIcon iconLiteral="mdi-soccer" iconSize="24"
+                                                      styleClass="option-jfx-list-view-icon"/>
+                                        </StackPane>
+                                    </graphic>
+                                </JFXButton>
+                                <JFXButton fx:id="buttonSetting" prefHeight="300.0" prefWidth="300.0"
+                                           styleClass="title-label" text="Réglages" GridPane.rowIndex="1"
+                                           GridPane.halignment="CENTER">
+                                    <graphic>
+                                        <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                            <FontIcon iconLiteral="mdi-tune" iconSize="24"
+                                                      styleClass="option-jfx-list-view-icon"/>
+                                        </StackPane>
+                                    </graphic>
+                                </JFXButton>
+                                <JFXButton fx:id="buttonRank" prefHeight="300.0" prefWidth="300.0"
+                                           styleClass="title-label" text="Classements" GridPane.columnIndex="1"
+                                           GridPane.halignment="CENTER">
+                                    <graphic>
+                                        <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                            <FontIcon iconLiteral="mdi-trophy-variant" iconSize="24"
+                                                      styleClass="option-jfx-list-view-icon"/>
+                                        </StackPane>
+                                    </graphic>
+                                </JFXButton>
+                                <JFXButton fx:id="buttonInfo" prefHeight="300.0" prefWidth="300.0"
+                                           styleClass="title-label" text="A propos" GridPane.columnIndex="1"
+                                           GridPane.rowIndex="1" GridPane.halignment="CENTER">
+                                    <graphic>
+                                        <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                            <FontIcon iconLiteral="mdi-information" iconSize="24"
+                                                      styleClass="option-jfx-list-view-icon"/>
+                                        </StackPane>
+                                    </graphic>
+                                </JFXButton>
+                                <JFXButton fx:id="buttonStatistic" prefHeight="300.0" prefWidth="300.0"
+                                           styleClass="title-label" text="Statistiques" GridPane.columnIndex="2"
+                                           GridPane.halignment="CENTER">
+                                    <graphic>
+                                        <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                            <FontIcon iconLiteral="mdi-chart-line" iconSize="24"
+                                                      styleClass="option-jfx-list-view-icon"/>
+                                        </StackPane>
+                                    </graphic>
+                                </JFXButton>
+                                <JFXButton fx:id="buttonLogout" prefHeight="300.0" prefWidth="300.0"
+                                           styleClass="title-label" text="Quitter" GridPane.columnIndex="2"
+                                           GridPane.rowIndex="1" GridPane.halignment="CENTER">
+                                    <graphic>
+                                        <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                            <FontIcon iconLiteral="mdi-logout" iconSize="24"
+                                                      styleClass="option-jfx-list-view-icon"/>
+                                        </StackPane>
+                                    </graphic>
+                                </JFXButton>
+                                <JFXDialog fx:id="dialog">
+                                    <JFXDialogLayout>
+                                        <heading>
+                                            <Label>A propos</Label>
+                                        </heading>
+                                        <body>
+                                            <Label>Cette application a été réalisé dans le cadre d'un projet en IHM,
+                                                réalisée par Yan Michiels et Quentin Pavageau.
+                                            </Label>
+                                        </body>
+                                        <actions>
+                                            <JFXButton fx:id="buttonAccept" styleClass="dialog-accept">Utiliser
+                                                l'application
                                             </JFXButton>
-                                            <JFXButton fx:id="buttonPopupValidateNo" styleClass="dialog-accept">Non
+                                        </actions>
+                                    </JFXDialogLayout>
+                                </JFXDialog>
+                                <JFXDialog fx:id="dialog2">
+                                    <JFXDialogLayout>
+                                        <heading>
+                                            <Label>
+                                                <graphic>
+                                                    <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                                        <FontIcon iconLiteral="mdi-alert" iconSize="24"
+                                                                  styleClass="option-jfx-list-view-icon"/>
+                                                    </StackPane>
+                                                </graphic>
+                                                Attention
+                                                <graphic>
+                                                    <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                                        <FontIcon iconLiteral="mdi-alert" iconSize="24"
+                                                                  styleClass="option-jfx-list-view-icon"/>
+                                                    </StackPane>
+                                                </graphic>
+                                            </Label>
+                                        </heading>
+                                        <body>
+                                            <VBox spacing="20" alignment="CENTER">
+                                                <Label>
+                                                    <text>
+                                                        Afin d'éviter des bugs graphiques je vous recommande de naviguer
+                                                        dans l'application via la panneau latéral.
+                                                        Pour y accéder, cliquer sur l'icone :
+                                                    </text>
+                                                </Label>
+                                                <Label>
+                                                    <graphic>
+                                                        <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                                            <FontIcon iconLiteral="mdi-menu" iconSize="24"
+                                                                      styleClass="option-jfx-list-view-icon"/>
+                                                        </StackPane>
+                                                    </graphic>
+                                                </Label>
+                                            </VBox>
+                                        </body>
+                                        <actions>
+                                            <JFXButton fx:id="buttonPopupValidate" styleClass="dialog-accept">J'ai
+                                                compris
                                             </JFXButton>
-                                        </children>
-                                     </HBox>
-                                 </actions>
-                             </JFXDialogLayout>
-                         </JFXDialog>
-                     </children>
-                  </GridPane>
-               </children>
-            </StackPane>
-         </center>
-      </BorderPane>
-   </children>
+                                        </actions>
+                                    </JFXDialogLayout>
+                                </JFXDialog>
+                                <JFXDialog fx:id="dialogLeave">
+                                    <JFXDialogLayout>
+                                        <heading>
+                                            <Label>
+                                                <graphic>
+                                                    <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                                        <FontIcon iconLiteral="mdi-alert" iconSize="24"
+                                                                  styleClass="option-jfx-list-view-icon"/>
+                                                    </StackPane>
+                                                </graphic>
+                                                Attention
+                                                <graphic>
+                                                    <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                                        <FontIcon iconLiteral="mdi-alert" iconSize="24"
+                                                                  styleClass="option-jfx-list-view-icon"/>
+                                                    </StackPane>
+                                                </graphic>
+                                            </Label>
+                                        </heading>
+                                        <body>
+                                            <VBox spacing="20" alignment="CENTER">
+                                                <Label>
+                                                    <text>
+                                                        Vous êtes sur le point de quitter de l'application, Vueillez
+                                                        confirmer
+                                                    </text>
+                                                </Label>
+                                            </VBox>
+                                        </body>
+                                        <actions>
+                                            <HBox spacing="40.0">
+                                                <children>
+                                                    <JFXButton fx:id="buttonPopupValidateYes"
+                                                               styleClass="dialog-accept">Oui
+                                                    </JFXButton>
+                                                    <JFXButton fx:id="buttonPopupValidateNo" styleClass="dialog-accept">
+                                                        Non
+                                                    </JFXButton>
+                                                </children>
+                                            </HBox>
+                                        </actions>
+                                    </JFXDialogLayout>
+                                </JFXDialog>
+                            </children>
+                        </GridPane>
+                    </children>
+                </StackPane>
+            </center>
+        </BorderPane>
+    </children>
 </StackPane>

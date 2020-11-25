@@ -1,17 +1,11 @@
 package sample.model;
 
+import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
+import javafx.beans.property.*;
+
 import java.time.LocalDate;
 
-import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
-import jdk.nashorn.internal.runtime.PropertyAccess;
-
-public class Person extends RecursiveTreeObject<Person>  {
+public class Person extends RecursiveTreeObject<Person> {
     protected StringProperty firstName;
     protected StringProperty lastName;
     protected StringProperty gender;
@@ -56,9 +50,9 @@ public class Person extends RecursiveTreeObject<Person>  {
         this.lastName = new SimpleStringProperty("");
     }
 
-    public Person(Person person){
+    public Person(Person person) {
         this.firstName = person.firstNameProperty();
-        this.lastName = person.lastNameProperty();  
+        this.lastName = person.lastNameProperty();
         this.gender = person.genderProperty();
         this.age = person.ageProperty();
         this.height = person.heightProperty();
@@ -102,11 +96,11 @@ public class Person extends RecursiveTreeObject<Person>  {
     public StringProperty nationalityProperty() {
         return nationality;
     }
-    
+
     public String getGender() {
         return gender.get();
     }
-    
+
     public StringProperty genderProperty() {
         return gender;
     }

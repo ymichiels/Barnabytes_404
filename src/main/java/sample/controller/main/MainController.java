@@ -21,6 +21,7 @@ import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
 import sample.controller.datafx.ExtendedAnimatedFlowContainer;
 import sample.controller.sidemenu.SideMenuController;
+
 import javax.annotation.PostConstruct;
 import java.io.IOException;
 

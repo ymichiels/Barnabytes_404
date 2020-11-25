@@ -21,7 +21,6 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Window;
 import javafx.util.Duration;
-import sample.controller.components.bar.TitleSectionBarMinController;
 
 import javax.annotation.PostConstruct;
 
@@ -107,24 +106,20 @@ public class NewMatchController {
     @ActionMethod("back")
     public void onBack() throws VetoException, FlowException {
         flowHandler.navigateBack();
-        if(flowHandler.getCurrentViewControllerClass().equals(LeagueSelectionController.class)) {
+        if (flowHandler.getCurrentViewControllerClass().equals(LeagueSelectionController.class)) {
             initButtonInfos(rootNewMatch, dialogNewMatchLeague, buttonPopupInfoSection2, viewFlowContext, CONTENT_PANE, buttonAcceptDialogNewMatchLeague);
             buttonBack.setDisable(true);
             labelTitleSection.setText("Sélection de la league");
-        }
-        else if(flowHandler.getCurrentViewControllerClass().equals(DateSelectionController.class)) {
+        } else if (flowHandler.getCurrentViewControllerClass().equals(DateSelectionController.class)) {
             initButtonInfos(rootNewMatch, dialogNewMatchDate, buttonPopupInfoSection2, viewFlowContext, CONTENT_PANE, buttonAcceptDialogNewMatchDate);
             labelTitleSection.setText("Sélection de la date");
-        }
-        else if(flowHandler.getCurrentViewControllerClass().equals(TeamSelectionController.class)) {
+        } else if (flowHandler.getCurrentViewControllerClass().equals(TeamSelectionController.class)) {
             initButtonInfos(rootNewMatch, dialogNewMatchTeam, buttonPopupInfoSection2, viewFlowContext, CONTENT_PANE, buttonAcceptDialogNewMatchTeam);
             labelTitleSection.setText("Sélection des équipes");
-        }
-        else if(flowHandler.getCurrentViewControllerClass().equals(PlayerSelectionController.class)) {
+        } else if (flowHandler.getCurrentViewControllerClass().equals(PlayerSelectionController.class)) {
             initButtonInfos(rootNewMatch, dialogNewMatchPlayer, buttonPopupInfoSection2, viewFlowContext, CONTENT_PANE, buttonAcceptDialogNewMatchPlayer);
             labelTitleSection.setText("Sélection des joueurs");
-        }
-        else {
+        } else {
             buttonBack.setDisable(false);
         }
         buttonFinish.setDisable(true);
@@ -135,15 +130,13 @@ public class NewMatchController {
     public void onNext() throws VetoException, FlowException {
         flowHandler.handle("next");
         //Match match = new Match();
-        if(flowHandler.getCurrentViewControllerClass().equals(DateSelectionController.class)) {
+        if (flowHandler.getCurrentViewControllerClass().equals(DateSelectionController.class)) {
             initButtonInfos(rootNewMatch, dialogNewMatchDate, buttonPopupInfoSection2, viewFlowContext, CONTENT_PANE, buttonAcceptDialogNewMatchDate);
             labelTitleSection.setText("Sélection de la date");
-        }
-        else if(flowHandler.getCurrentViewControllerClass().equals(TeamSelectionController.class)) {
+        } else if (flowHandler.getCurrentViewControllerClass().equals(TeamSelectionController.class)) {
             initButtonInfos(rootNewMatch, dialogNewMatchTeam, buttonPopupInfoSection2, viewFlowContext, CONTENT_PANE, buttonAcceptDialogNewMatchTeam);
             labelTitleSection.setText("Sélection des équipes");
-        }
-        else if(flowHandler.getCurrentViewControllerClass().equals(PlayerSelectionController.class)) {
+        } else if (flowHandler.getCurrentViewControllerClass().equals(PlayerSelectionController.class)) {
             initButtonInfos(rootNewMatch, dialogNewMatchPlayer, buttonPopupInfoSection2, viewFlowContext, CONTENT_PANE, buttonAcceptDialogNewMatchPlayer);
             buttonNext.setDisable(true);
             buttonFinish.setDisable(false);
@@ -163,7 +156,7 @@ public class NewMatchController {
     }
 
     private void hideWindow(JFXButton button) {
-    Window window = buttonFinish.getScene().getWindow();
-    window.hide();
+        Window window = buttonFinish.getScene().getWindow();
+        window.hide();
     }
 }

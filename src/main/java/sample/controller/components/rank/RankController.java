@@ -10,7 +10,6 @@ import io.datafx.controller.flow.FlowHandler;
 import io.datafx.controller.flow.context.FXMLViewFlowContext;
 import io.datafx.controller.flow.context.ViewFlowContext;
 import javafx.beans.binding.Bindings;
-import javafx.beans.property.IntegerProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -21,9 +20,6 @@ import javafx.scene.control.TreeTableColumn;
 import javafx.scene.layout.StackPane;
 import sample.controller.components.bar.TitleSectionBarController;
 import sample.controller.components.dashboard.DashboardController;
-import sample.model.Player;
-import sample.model.Team;
-import sample.model.Team;
 import sample.model.Team;
 
 import javax.annotation.PostConstruct;
@@ -31,7 +27,7 @@ import java.security.SecureRandom;
 import java.util.Random;
 import java.util.function.Function;
 
-@ViewController(value = "/view/components/rank/Rank.fxml",  title = "Application de Handball")
+@ViewController(value = "/view/components/rank/Rank.fxml", title = "Application de Handball")
 public class RankController extends TitleSectionBarController {
 
     public static final String CONTENT_PANE = "ContentPane";

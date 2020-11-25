@@ -4,18 +4,11 @@ import io.datafx.controller.flow.FlowException;
 import io.datafx.controller.flow.FlowHandler;
 import io.datafx.controller.flow.context.ViewFlowContext;
 import io.datafx.controller.util.VetoException;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 import sample.model.User;
-
-import java.io.IOException;
-import java.net.URL;
 
 public final class Navigate {
 
@@ -27,11 +20,17 @@ public final class Navigate {
     private static ViewFlowContext context;
 
     //Getters and Setters
-    public static void sleep() { setUser(null); }
+    public static void sleep() {
+        setUser(null);
+    }
 
-    public User getUser() { return connectedUser; }
+    public User getUser() {
+        return connectedUser;
+    }
 
-    public static void setUser(User user) { connectedUser = user; }
+    public static void setUser(User user) {
+        connectedUser = user;
+    }
 
     public static User getConnectedUser() {
         return connectedUser;
@@ -67,7 +66,7 @@ public final class Navigate {
 
     public static void navigateTo(Class controller) {
         String controllerName = controller.getSimpleName();
-        FlowHandler contentFlowHandler = (FlowHandler)context.getRegisteredObject("ContentFlowHandler");
+        FlowHandler contentFlowHandler = (FlowHandler) context.getRegisteredObject("ContentFlowHandler");
         try {
             contentFlowHandler.handle(controllerName);
         } catch (VetoException e) {
@@ -80,7 +79,7 @@ public final class Navigate {
 
     public static void navigateTo(Class controller, String contentName) {
         String controllerName = controller.getSimpleName();
-        FlowHandler contentFlowHandler = (FlowHandler)context.getRegisteredObject(contentName);
+        FlowHandler contentFlowHandler = (FlowHandler) context.getRegisteredObject(contentName);
         try {
             contentFlowHandler.handle(controllerName);
         } catch (VetoException e) {
@@ -91,7 +90,7 @@ public final class Navigate {
         System.out.println("Chargement de : " + controllerName + " est terminé.");
     }
 
-    public static void setUserProfile(Label username, ImageView buttonLogOut){
+    public static void setUserProfile(Label username, ImageView buttonLogOut) {
         username.setText(connectedUser.getFirstName() + " " + connectedUser.getLastName());
         // set disconnect tooltip
         Tooltip.install(buttonLogOut, new Tooltip("Déconnexion"));

@@ -5,10 +5,6 @@
  */
 package sample.controller.components.match;
 
-import java.security.SecureRandom;
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.function.Function;
 import com.jfoenix.controls.*;
 import com.jfoenix.controls.cells.editors.IntegerTextFieldEditorBuilder;
 import com.jfoenix.controls.cells.editors.TextFieldEditorBuilder;
@@ -35,11 +31,16 @@ import sample.controller.components.bar.TitleSectionBarMinController;
 import sample.model.*;
 import sample.util.Clock;
 import sample.util.ListActionCell;
+
 import javax.annotation.PostConstruct;
+import java.security.SecureRandom;
+import java.util.ArrayList;
+import java.util.Random;
+import java.util.function.Function;
 
 import static sample.controller.components.dashboard.DashboardController.initButtonInfos;
 
-@ViewController(value = "/view/components/match/Match.fxml",  title = "Application de Handball")
+@ViewController(value = "/view/components/match/Match.fxml", title = "Application de Handball")
 public class MatchController extends TitleSectionBarMinController {
 
     private static final String PREFIX = "( ";
@@ -196,8 +197,8 @@ public class MatchController extends TitleSectionBarMinController {
     private ListView playersList;
     private Clock timer;
     private Match match;
-    ArrayList <Action> arrayListActions = new ArrayList<>();
-    ArrayList <Player> arrayListPlayers = new ArrayList<>();
+    ArrayList<Action> arrayListActions = new ArrayList<>();
+    ArrayList<Player> arrayListPlayers = new ArrayList<>();
     private Team team1;
     private Team team2;
     private Player player;
@@ -236,7 +237,7 @@ public class MatchController extends TitleSectionBarMinController {
 
 
         timer = new Clock(buttonLaunch, labelTimer);
-        
+
         observableListActionMatchTexte = FXCollections.observableArrayList(ACTIONS);
         observableListPlayers = FXCollections.observableArrayList(NAMES);
         observableListPostsPlayers = FXCollections.observableArrayList(POSTS);
@@ -268,8 +269,7 @@ public class MatchController extends TitleSectionBarMinController {
         Player playersTeam1 = (Player) observableListPlayersTeam1;
         Player playersTeam2 = (Player) observableListPlayersTeam2;
         Referee = new Referee(textFieldRefereeName.getPromptText());
-        if (!(textFieldTeamName1.getText().isEmpty()) && (!(textFieldTeamName2.getText().isEmpty())) && (!(textFieldRefereeName.getText().isEmpty())) && (!(textFieldCoachNameTeam1.getText().isEmpty())) && (!(textFieldCoachNameTeam2.getText().isEmpty())))
-        {
+        if (!(textFieldTeamName1.getText().isEmpty()) && (!(textFieldTeamName2.getText().isEmpty())) && (!(textFieldRefereeName.getText().isEmpty())) && (!(textFieldCoachNameTeam1.getText().isEmpty())) && (!(textFieldCoachNameTeam2.getText().isEmpty()))) {
             match = new Match(
                     launchCount,
                     textFieldRefereeName.getText(),
@@ -292,16 +292,13 @@ public class MatchController extends TitleSectionBarMinController {
             } else if (buttonLaunch.getText().equals("Mettre en pause")) {
                 timer.startStop();
                 buttonLaunch.setText("Relancer");
-            }
-            else if (buttonLaunch.getText().equals("Arrêter le match")) {
+            } else if (buttonLaunch.getText().equals("Arrêter le match")) {
                 if (!timer.isStopped()) {
                     timer.startStop();
                 }
             }
 
-        }
-        else if ((textFieldCoachNameTeam1.getText().isEmpty()) && (textFieldTeamName2.getText().isEmpty()) && (textFieldRefereeName.getText().isEmpty()) && (textFieldCoachNameTeam1.getText().isEmpty()) && (textFieldCoachNameTeam2.getText().isEmpty()))
-        {
+        } else if ((textFieldCoachNameTeam1.getText().isEmpty()) && (textFieldTeamName2.getText().isEmpty()) && (textFieldRefereeName.getText().isEmpty()) && (textFieldCoachNameTeam1.getText().isEmpty()) && (textFieldCoachNameTeam2.getText().isEmpty())) {
             match = new Match(
                     launchCount,
                     textFieldRefereeName.getPromptText(),
@@ -326,8 +323,7 @@ public class MatchController extends TitleSectionBarMinController {
                 iconStart.setIconLiteral("mdi-play");
                 timer.startStop();
                 buttonLaunch.setText("Relancer");
-            }
-            else if (buttonLaunch.getText().equals("Arrêter le match")) {
+            } else if (buttonLaunch.getText().equals("Arrêter le match")) {
                 if (!timer.isStopped()) {
                     timer.startStop();
                 }
@@ -642,7 +638,7 @@ public class MatchController extends TitleSectionBarMinController {
             if (event.getClickCount() == 2 && !timer.isStopped()) {
                 switch (listViewActions.getSelectionModel().getSelectedItem()) {
                     case "But":
-                        if(!treeTableViewTeam1.getSelectionModel().isEmpty()){
+                        if (!treeTableViewTeam1.getSelectionModel().isEmpty()) {
                             System.out.println("but équipe 1");
                             playerCurrentSelected = treeTableViewTeam1.getSelectionModel().getSelectedItem();
                             System.out.println(playerCurrentSelected.getValue().lastName);
@@ -650,8 +646,7 @@ public class MatchController extends TitleSectionBarMinController {
                             treeTableViewTeam1.getSelectionModel().clearSelection();
                             labelStrikeTeam1.setText(Integer.toString(match.getStrikeCountTeam1()));
                             refreshScore();
-                        }
-                        else if (!treeTableViewTeam2.getSelectionModel().isEmpty()){
+                        } else if (!treeTableViewTeam2.getSelectionModel().isEmpty()) {
                             System.out.println("but équipe 2");
                             playerCurrentSelected = treeTableViewTeam2.getSelectionModel().getSelectedItem();
                             System.out.println(playerCurrentSelected.getValue().lastName);
@@ -662,15 +657,14 @@ public class MatchController extends TitleSectionBarMinController {
                         }
                         break;
                     case "Faute":
-                        if(!treeTableViewTeam1.getSelectionModel().isEmpty()){
+                        if (!treeTableViewTeam1.getSelectionModel().isEmpty()) {
                             System.out.println("faute équipe 1");
                             playerCurrentSelected = treeTableViewTeam1.getSelectionModel().getSelectedItem();
                             System.out.println(playerCurrentSelected.getValue().lastName);
                             match.newFoul(treeTableViewTeam1.getSelectionModel().getSelectedItem(), labelTimer.getText());
                             treeTableViewTeam1.getSelectionModel().clearSelection();
                             labelFoulTeam1.setText(Integer.toString(match.getFoulCountTeam1()));
-                        }
-                        else if (!treeTableViewTeam2.getSelectionModel().isEmpty()){
+                        } else if (!treeTableViewTeam2.getSelectionModel().isEmpty()) {
                             System.out.println("faute équipe 2");
                             playerCurrentSelected = treeTableViewTeam2.getSelectionModel().getSelectedItem();
                             System.out.println(playerCurrentSelected.getValue().lastName);
@@ -680,15 +674,14 @@ public class MatchController extends TitleSectionBarMinController {
                         }
                         break;
                     case "Tir":
-                        if(!treeTableViewTeam1.getSelectionModel().isEmpty()){
+                        if (!treeTableViewTeam1.getSelectionModel().isEmpty()) {
                             System.out.println("tir équipe 1");
                             playerCurrentSelected = treeTableViewTeam1.getSelectionModel().getSelectedItem();
                             System.out.println(playerCurrentSelected.getValue().lastName);
                             match.newStrike(treeTableViewTeam1.getSelectionModel().getSelectedItem(), labelTimer.getText());
                             treeTableViewTeam1.getSelectionModel().clearSelection();
                             labelStrikeTeam1.setText(Integer.toString(match.getStrikeCountTeam1()));
-                        }
-                        else if (!treeTableViewTeam2.getSelectionModel().isEmpty()){
+                        } else if (!treeTableViewTeam2.getSelectionModel().isEmpty()) {
                             System.out.println("tir équipe 2");
                             playerCurrentSelected = treeTableViewTeam2.getSelectionModel().getSelectedItem();
                             System.out.println(playerCurrentSelected.getValue().lastName);
@@ -698,14 +691,13 @@ public class MatchController extends TitleSectionBarMinController {
                         }
                         break;
                     case "Entrée":
-                        if(!treeTableViewTeam1.getSelectionModel().isEmpty()){
+                        if (!treeTableViewTeam1.getSelectionModel().isEmpty()) {
                             System.out.println("entrée équipe 1");
                             playerCurrentSelected = treeTableViewTeam1.getSelectionModel().getSelectedItem();
                             System.out.println(playerCurrentSelected.getValue().lastName);
                             match.newEnter(treeTableViewTeam1.getSelectionModel().getSelectedItem(), labelTimer.getText());
                             treeTableViewTeam1.getSelectionModel().clearSelection();
-                        }
-                        else if (!treeTableViewTeam2.getSelectionModel().isEmpty()){
+                        } else if (!treeTableViewTeam2.getSelectionModel().isEmpty()) {
                             System.out.println("entrée équipe 2");
                             playerCurrentSelected = treeTableViewTeam2.getSelectionModel().getSelectedItem();
                             System.out.println(playerCurrentSelected.getValue().lastName);
@@ -714,14 +706,13 @@ public class MatchController extends TitleSectionBarMinController {
                         }
                         break;
                     case "Sortie":
-                        if(!treeTableViewTeam1.getSelectionModel().isEmpty()){
+                        if (!treeTableViewTeam1.getSelectionModel().isEmpty()) {
                             System.out.println("sortie équipe 1");
                             playerCurrentSelected = treeTableViewTeam1.getSelectionModel().getSelectedItem();
                             System.out.println(playerCurrentSelected.getValue().lastName);
                             match.newOut(treeTableViewTeam1.getSelectionModel().getSelectedItem(), labelTimer.getText());
                             treeTableViewTeam1.getSelectionModel().clearSelection();
-                        }
-                        else if (!treeTableViewTeam2.getSelectionModel().isEmpty()){
+                        } else if (!treeTableViewTeam2.getSelectionModel().isEmpty()) {
                             System.out.println("sortie équipe 2");
                             playerCurrentSelected = treeTableViewTeam2.getSelectionModel().getSelectedItem();
                             System.out.println(playerCurrentSelected.getValue().lastName);
@@ -730,14 +721,13 @@ public class MatchController extends TitleSectionBarMinController {
                         }
                         break;
                     case "Passe décisive":
-                        if(!treeTableViewTeam1.getSelectionModel().isEmpty()){
+                        if (!treeTableViewTeam1.getSelectionModel().isEmpty()) {
                             System.out.println("passe décisive équipe 1");
                             playerCurrentSelected = treeTableViewTeam1.getSelectionModel().getSelectedItem();
                             System.out.println(playerCurrentSelected.getValue().lastName);
                             match.newPass(treeTableViewTeam1.getSelectionModel().getSelectedItem(), labelTimer.getText());
                             treeTableViewTeam1.getSelectionModel().clearSelection();
-                        }
-                        else if (!treeTableViewTeam2.getSelectionModel().isEmpty()){
+                        } else if (!treeTableViewTeam2.getSelectionModel().isEmpty()) {
                             System.out.println("passe décisive équipe 2");
                             playerCurrentSelected = treeTableViewTeam2.getSelectionModel().getSelectedItem();
                             System.out.println(playerCurrentSelected.getValue().lastName);
@@ -746,15 +736,14 @@ public class MatchController extends TitleSectionBarMinController {
                         }
                         break;
                     case "Exclusion":
-                        if(!treeTableViewTeam1.getSelectionModel().isEmpty()){
+                        if (!treeTableViewTeam1.getSelectionModel().isEmpty()) {
                             System.out.println("exclusion équipe 1");
                             playerCurrentSelected = treeTableViewTeam1.getSelectionModel().getSelectedItem();
                             System.out.println(playerCurrentSelected.getValue().lastName);
                             match.newExclusion(treeTableViewTeam1.getSelectionModel().getSelectedItem(), labelTimer.getText());
                             treeTableViewTeam1.getSelectionModel().clearSelection();
                             labelExclusionTeam1.setText(Integer.toString(match.getExclusionCountTeam1()));
-                        }
-                        else if (!treeTableViewTeam2.getSelectionModel().isEmpty()){
+                        } else if (!treeTableViewTeam2.getSelectionModel().isEmpty()) {
                             System.out.println("exclusion équipe 2");
                             playerCurrentSelected = treeTableViewTeam2.getSelectionModel().getSelectedItem();
                             System.out.println(playerCurrentSelected.getValue().lastName);
@@ -764,14 +753,13 @@ public class MatchController extends TitleSectionBarMinController {
                         }
                         break;
                     case "Avertissement":
-                        if(!treeTableViewTeam1.getSelectionModel().isEmpty()){
+                        if (!treeTableViewTeam1.getSelectionModel().isEmpty()) {
                             System.out.println("disqualification équipe 1");
                             playerCurrentSelected = treeTableViewTeam1.getSelectionModel().getSelectedItem();
                             System.out.println(playerCurrentSelected.getValue().lastName);
                             match.newWarning(treeTableViewTeam1.getSelectionModel().getSelectedItem(), labelTimer.getText());
                             treeTableViewTeam1.getSelectionModel().clearSelection();
-                        }
-                        else if (!treeTableViewTeam2.getSelectionModel().isEmpty()){
+                        } else if (!treeTableViewTeam2.getSelectionModel().isEmpty()) {
                             System.out.println("disqualification équipe 2");
                             playerCurrentSelected = treeTableViewTeam2.getSelectionModel().getSelectedItem();
                             System.out.println(playerCurrentSelected.getValue().lastName);
@@ -780,15 +768,14 @@ public class MatchController extends TitleSectionBarMinController {
                         }
                         break;
                     case "Carton jaune":
-                        if(!treeTableViewTeam1.getSelectionModel().isEmpty()){
+                        if (!treeTableViewTeam1.getSelectionModel().isEmpty()) {
                             System.out.println("carton jaune équipe 1");
                             playerCurrentSelected = treeTableViewTeam1.getSelectionModel().getSelectedItem();
                             System.out.println(playerCurrentSelected.getValue().lastName);
                             match.newYellowCard(treeTableViewTeam1.getSelectionModel().getSelectedItem(), labelTimer.getText());
                             treeTableViewTeam1.getSelectionModel().clearSelection();
                             labelYellowCardTeam1.setText(Integer.toString(match.getYellowCardCountTeam1()));
-                        }
-                        else if (!treeTableViewTeam2.getSelectionModel().isEmpty()){
+                        } else if (!treeTableViewTeam2.getSelectionModel().isEmpty()) {
                             System.out.println("carton jaune équipe 2");
                             playerCurrentSelected = treeTableViewTeam2.getSelectionModel().getSelectedItem();
                             System.out.println(playerCurrentSelected.getValue().lastName);
@@ -798,7 +785,7 @@ public class MatchController extends TitleSectionBarMinController {
                         }
                         break;
                     case "Carton rouge":
-                        if(!treeTableViewTeam1.getSelectionModel().isEmpty()){
+                        if (!treeTableViewTeam1.getSelectionModel().isEmpty()) {
                             System.out.println("carton rouge équipe 1");
                             playerCurrentSelected = treeTableViewTeam1.getSelectionModel().getSelectedItem();
                             System.out.println(playerCurrentSelected.getValue().lastName);
@@ -806,8 +793,7 @@ public class MatchController extends TitleSectionBarMinController {
                             treeTableViewTeam1.getSelectionModel().clearSelection();
                             labelRedCardTeam1.setText(Integer.toString(match.getRedCardCountTeam1()));
 
-                        }
-                        else if (!treeTableViewTeam2.getSelectionModel().isEmpty()){
+                        } else if (!treeTableViewTeam2.getSelectionModel().isEmpty()) {
                             System.out.println("carton rouge équipe 2");
                             playerCurrentSelected = treeTableViewTeam2.getSelectionModel().getSelectedItem();
                             System.out.println(playerCurrentSelected.getValue().lastName);
@@ -817,15 +803,14 @@ public class MatchController extends TitleSectionBarMinController {
                         }
                         break;
                     case "Carton bleu":
-                        if(!treeTableViewTeam1.getSelectionModel().isEmpty()){
+                        if (!treeTableViewTeam1.getSelectionModel().isEmpty()) {
                             System.out.println("carton bleu équipe 1");
                             playerCurrentSelected = treeTableViewTeam1.getSelectionModel().getSelectedItem();
                             System.out.println(playerCurrentSelected.getValue().lastName);
                             match.newBlueCard(treeTableViewTeam1.getSelectionModel().getSelectedItem(), labelTimer.getText());
                             treeTableViewTeam1.getSelectionModel().clearSelection();
                             labelBlueCardTeam1.setText(Integer.toString(match.getBlueCardCountTeam1()));
-                        }
-                        else if (!treeTableViewTeam2.getSelectionModel().isEmpty()){
+                        } else if (!treeTableViewTeam2.getSelectionModel().isEmpty()) {
                             System.out.println("carton bleu équipe 2");
                             playerCurrentSelected = treeTableViewTeam2.getSelectionModel().getSelectedItem();
                             System.out.println(playerCurrentSelected.getValue().lastName);
@@ -835,15 +820,14 @@ public class MatchController extends TitleSectionBarMinController {
                         }
                         break;
                     case "Arrêt du gardien":
-                        if(!treeTableViewTeam1.getSelectionModel().isEmpty()){
+                        if (!treeTableViewTeam1.getSelectionModel().isEmpty()) {
                             System.out.println("arrêt guardien équipe 1");
                             playerCurrentSelected = treeTableViewTeam1.getSelectionModel().getSelectedItem();
                             System.out.println(playerCurrentSelected.getValue().lastName);
                             match.newSave(treeTableViewTeam1.getSelectionModel().getSelectedItem(), labelTimer.getText());
                             treeTableViewTeam1.getSelectionModel().clearSelection();
                             labelSaveTeam1.setText(Integer.toString(match.getSaveCountTeam1()));
-                        }
-                        else if (!treeTableViewTeam2.getSelectionModel().isEmpty()) {
+                        } else if (!treeTableViewTeam2.getSelectionModel().isEmpty()) {
                             System.out.println("arrêt guardien équipe 2");
                             playerCurrentSelected = treeTableViewTeam2.getSelectionModel().getSelectedItem();
                             System.out.println(playerCurrentSelected.getValue().lastName);
@@ -853,15 +837,14 @@ public class MatchController extends TitleSectionBarMinController {
                         }
                         break;
                     case "Temps mort":
-                        if(!treeTableViewTeam1.getSelectionModel().isEmpty()){
+                        if (!treeTableViewTeam1.getSelectionModel().isEmpty()) {
                             System.out.println("temps mort équipe 1");
                             playerCurrentSelected = treeTableViewTeam1.getSelectionModel().getSelectedItem();
                             System.out.println(playerCurrentSelected.getValue().lastName);
                             match.newDeadTime(treeTableViewTeam1.getSelectionModel().getSelectedItem(), labelTimer.getText());
                             treeTableViewTeam1.getSelectionModel().clearSelection();
                             labelDeadTimeTeam1.setText(Integer.toString(match.getDeadTimeCountTeam1()));
-                        }
-                        else if (!treeTableViewTeam2.getSelectionModel().isEmpty()) {
+                        } else if (!treeTableViewTeam2.getSelectionModel().isEmpty()) {
                             System.out.println("temps mort équipe 2");
                             playerCurrentSelected = treeTableViewTeam2.getSelectionModel().getSelectedItem();
                             System.out.println(playerCurrentSelected.getValue().lastName);

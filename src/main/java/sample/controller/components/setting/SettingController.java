@@ -17,7 +17,7 @@ import sample.util.Create;
 
 import javax.annotation.PostConstruct;
 
-@ViewController(value = "/view/components/setting/Setting.fxml",  title = "Application de Handball")
+@ViewController(value = "/view/components/setting/Setting.fxml", title = "Application de Handball")
 public class SettingController extends TitleSectionBarController {
 
     public static final String CONTENT_PANE = "ContentPane";
@@ -49,7 +49,7 @@ public class SettingController extends TitleSectionBarController {
     }
 
     @FXML
-    private void addNewPlayer () {
+    private void addNewPlayer() {
         try {
             Flow addNewMatchFlow = new Flow(NewPlayerController.class);
             FlowHandler addNewMatchFlowHandler = addNewMatchFlow.createHandler(viewFlowContext);
